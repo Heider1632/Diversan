@@ -18,6 +18,9 @@
                               <li>
                                   <router-link to="/acerca">Acerca</router-link>
                               </li>
+                              <li>
+                                    <a href="" v-onclick="atras()">Atras</a>
+                              </li>
                         </ul>
                   </div>
             </nav>
@@ -25,7 +28,11 @@
 </template>
 <script>
 export default {
-    
+    methods: {
+          atras(){
+                this.$router.go(-1);
+          }
+    }
 }
 </script>
 <style>
@@ -41,7 +48,7 @@ nav {
 }
 
 .logo a {
-      color: #000;
+      color:#03A9F4;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 18px;
