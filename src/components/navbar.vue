@@ -51,7 +51,7 @@ nav {
       color:#03A9F4;
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 30px;
       letter-spacing: 0px;
       text-decoration: none;
 }
