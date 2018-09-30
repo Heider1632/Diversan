@@ -19,7 +19,7 @@
                                   <router-link to="/acerca">Acerca</router-link>
                               </li>
                               <li>
-                                    <a href="" v-onclick="atras()">Atras</a>
+                                    <a href="" v-on:click="atras()">Atras</a>
                               </li>
                         </ul>
                   </div>

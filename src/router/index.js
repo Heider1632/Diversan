@@ -11,6 +11,7 @@ import about from '../components/about'
 Vue.use(VueRouter);
 
 let router = new VueRouter({
+	mode: 'history',
 	routes: [
 		{
 			path : '/',

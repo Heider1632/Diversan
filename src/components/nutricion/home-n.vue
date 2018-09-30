@@ -11,7 +11,7 @@
                     <img src="" alt="" />
                 </div>
             </div>
-            <div class="row bg-g">
+            <div class="row">
                 <div class="col-lg-4 col-sm-5">
                     <img src="" alt="" />
                 </div>
@@ -84,5 +84,6 @@ export default {
 
 .sm-1 > a, .sm-2 > a, .sm-3 > a, .sm-4 > a{
     color: #fff;
+    text-decoration: none;
 }
 </style>

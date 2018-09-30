@@ -2,20 +2,21 @@
 <main>
     <div class="container-fluid wrapper">
         <div class="row">
-            <div class="col-lg-12 col-sm-8">
-                <img src="../assets/logo.svg" class="logo" alt="logo">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="centrador"></div>
             </div>
-            <div class="main col-lg-12 col-sm-6">
+            <div class="main col-lg-12 col-md-12 col-sm-12">
                 <div class="iteraction">
-                <div class="nutricion">
-                    <h1>
-                        <router-link to="/inicionutricion">INICIO</router-link>
-                    </h1>
+                    <div class="nutricion">
+                        <h1>
+                            <router-link to="/inicionutricion">INICIO</router-link>
+                        </h1>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
+    <audio src="../avicii-heybrother.mp3" autoplay></audio>
 </main>
 </template>
 <script>
@@ -26,24 +27,24 @@ export default {
 
 
 <style scoped>
-.logo{
-    width: 300px;
-    height: 300px;
-    position: relative;
-    left: 500px;
-}
 .wrapper{
-    margin-top: 100px;
+    margin-top: 20px;
+}
+.centrador{
+    width: 100%;
+    height: 300px;
+    background: url("../assets/logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 .iteraction{
-      width: 600px;
+      width: 100%;
       height: auto;
+      text-align: center;
       border: 5px solid #d35400;
       border-radius: 10px;
       transition: border-width 0.6s linear;
-      margin-left: 25px;
-      position: relative;
-      left: 350px;
 }
 
 .iteraction:hover{

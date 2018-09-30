@@ -4,6 +4,7 @@ import router from './router'
 import bootstrapCss from 'bootstrap/dist/css/bootstrap.min.css'
 import bootstrapJs from 'bootstrap/dist/js/bootstrap.min.js'
 import VueProgressBar from 'vue-progressbar'
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
 
@@ -21,7 +22,8 @@ const options = {
   inverse: false
 }
 
-Vue.use(VueProgressBar, options)
+Vue.use(VueProgressBar, options);
+Vue.use(BootstrapVue);
 
 new Vue({
   router,

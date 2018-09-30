@@ -61,8 +61,9 @@ body {
       height: 100vh;
       font-family: Poppins;
       font-weight: 400;
-      background: url(../src/assets/background-img.jpg);
+      background: url(../src/assets/Fondo.svg);
       background-position: center;
       background-size: cover;
+      background-repeat: no-repeat;
 }
 </style>
