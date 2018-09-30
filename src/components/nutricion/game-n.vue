@@ -5,17 +5,17 @@
     <div class="col-lg-8 col-sm-8">
       <div class="boxes-game">
         <!--<h5 align="center" class="title">Carnes</h5>-->
-        <div v-bind:class="[className]" :id="id.l1" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
         <!--<h5 align="center" class="title">Lácteos</h5>-->
-        <div v-bind:class="[className]" :id="id.l2" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
         <!--<h5 align="center" class="title">Comidas Rápidas</h5>-->
-        <div v-bind:class="[className]" :id="id.l3" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
         <!--<h5 align="center" class="title">Agua</h5>-->
-        <div v-bind:class="[className]" :id="id.l4" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
         <!--<h5 align="center" class="title">Harinas</h5>-->
-        <div v-bind:class="[className]" :id="id.l5" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
         <!--<h5 align="center" class="title">Frutas</h5>-->
-        <div v-bind:class="[className]" :id="id.l6" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+        <div v-bind:class="[className]" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
       </div>
 
       <div class="boxes-player">
@@ -40,23 +40,18 @@ export default {
   data() {
     return {
       draggingItem: undefined,
+      dragged: undefined,
       className: 'empty',
       classOn: 'fill',
-      id: {
-        l1: null,
-        l2: null,
-        l3: null,
-        l4: null,
-        l5: null,
-        l6: null,
-      }
+      id: null
       }
     },
     methods:{
       // Drag Functions //
       dragstart: function(e) {
         this.className = 'hold';
-        this.draggingItem = e.target.id; 
+        this.draggingItem = e.target.id;
+        this.dragged = e.target;
         e.target.style.opacity = 0.5;
       },
       dragend: function(e) {
@@ -70,8 +65,9 @@ export default {
         this.className = 'empty';
       },
       dragdrop: function(e){
-        this.className = 'empty';
-        this.id = this.draggingItem;
+        this.classOn = 'enter';
+        this.dragged.parentNode.removeChild( this.dragged );
+        event.target.appendChild( this.dragged );
       },
       dragover: function(e){
         e.preventDefault();
@@ -85,49 +81,54 @@ export default {
   display: inline-block;
   height: 100px;
   width: 100px;
-  top: 5px;
-  left: 5px;
   cursor: pointer;
   margin: 10px;
 }
 
+.enter{
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
 #l1{
-  background: url("../../assets/1 Agua.svg");
+  background: url("../../assets/Vaso De agua.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #l2{
-  background: url("../../assets/2 Arinas.svg");
+  background: url("../../assets/Cena.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #l3{
-  background: url("../../assets/3 Frutas.svg");
+  background: url("../../assets/Desayuno.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #l4{
-  background: url("../../assets/4 Lacteos.svg");
+  background: url("../../assets/Verduras.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #l5{
-  background: url("../../assets/5 Carnes.svg");
+  background: url("../../assets/Comidas Frutas.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #l6{
-  background: url("../../assets/6 Comidas Rapida.svg");
+  background: url("../../assets/Almuerso.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
