@@ -45,6 +45,8 @@ export default {
 <style>
 * {
       box-sizing: border-box;
+      font-family: 'Merriweather', serif;
+      font-family: 'Indie Flower', cursive;
 }
 
 html {
@@ -59,8 +61,6 @@ body {
       padding: 0;
       width: 100%;
       height: 100vh;
-      font-family: Poppins;
-      font-weight: 400;
       background: url(../src/assets/Fondo.svg);
       background-position: center;
       background-size: cover;

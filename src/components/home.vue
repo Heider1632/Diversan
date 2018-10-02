@@ -28,7 +28,10 @@ export default {
 
 <style scoped>
 .wrapper{
-    margin-top: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .centrador{
     width: 100%;

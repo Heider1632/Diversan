@@ -7,9 +7,9 @@
                         <i></i>
                         <i></i>
                   </label>
-                  <div class="logo">
+                  <!--<div class="logo">
                         <a href="#">DiverSan</a>
-                  </div>
+                  </div>-->
                   <div class="nav-wrapper">
                         <ul>
                               <li>
@@ -19,7 +19,7 @@
                                   <router-link to="/acerca">Acerca</router-link>
                               </li>
                               <li>
-                                    <a href="" v-on:click="atras()">Atras</a>
+                                    <a @click="atras">Atras</a>
                               </li>
                         </ul>
                   </div>
@@ -79,7 +79,7 @@ nav ul li a {
       color: #000;
       text-transform: uppercase;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 20px;
       letter-spacing: 1.2px;
       font-weight: 600;
 }
