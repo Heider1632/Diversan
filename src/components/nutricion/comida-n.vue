@@ -15,6 +15,16 @@
                 </div>
             </div>
         </div>
+
+         <!-- modal piramide -->
+            <b-modal ref="myModalPiramide" hide-footer title="Definicion">
+                    <div class="d-block text-center">
+                        <video height="x" width="x">
+                           <!-- <source src="../../assets/video/example.mp4"> -->
+                        </video>
+                    </div>
+                    <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Cerrar</b-btn>
+            </b-modal>
     </div>
 </template>
 <script>
@@ -30,6 +40,11 @@ export default {
            opacity4: null,
            opacity5: null,
            opacity6: null
+        }
+    },
+    computed: {
+        show(){
+            this.$refs.myModalPiramide.show();
         }
     },
     methods: {
@@ -101,6 +116,9 @@ export default {
             this.opacity4 = null;
             this.opacity5 = null;
             this.opacity6 = null;
+        },
+        hideModal () {
+            this.$refs.myModalPiramide.hide()
         }
     }
 }

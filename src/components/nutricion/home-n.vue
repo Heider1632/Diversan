@@ -21,8 +21,8 @@
             <!-- modal concepto -->
             <b-modal ref="myModalRef" hide-footer title="Bienvenido">
                     <div class="d-block text-center">
-                        <video height="x" width="x">
-                           <!-- <source src="../../assets/video/example.mp4"> -->
+                        <video height="400" width="400" controls>
+                           <source src="../../assets/video/nutricion.mp4">
                         </video>
                     </div>
                     <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Cerrar</b-btn>

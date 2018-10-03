@@ -1,9 +1,24 @@
 <template>
 <main>
+<div class="container">
+  <div class="row controls">
+      <!-- primer juego -->
+      <div class="col-lg-6 col-md-6 col-sm-6">
+          <b-alert show variant="warning" @click="showG1">Juego piramide</b-alert>
+      </div>  
+      <!-- segundo juego -->
+       <div class="col-lg-6 col-md-6 col-sm-6">
+           <b-alert show variant="primary" @click="showG2">Juega Adivina</b-alert>
+       </div>
+    </div>
+</div>
 <div class="container-fluid">
-    <div class="row bg-g">
+    <div class="row">
+    <div v-bind:class="[game]">
+    <!-- juego piramide -->
     <!-- Cards player-->
     <div class="col-lg-4 col-md-2 col-sm-2">
+      <div class="box">
       <div v-bind:class="[classOn]" id="i1" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
       <div v-bind:class="[classOn]" id="i2" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
       <div v-bind:class="[classOn]" id="i3" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
@@ -14,6 +29,7 @@
       <div v-bind:class="[classOn]" id="i8" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
       <div v-bind:class="[classOn]" id="i9" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
       <div v-bind:class="[classOn]" id="i10" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
+      </div>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-6 piramid">
         <!--<h5 align="center" class="title">Carnes</h5>-->
@@ -33,6 +49,7 @@
     </div>
       <!-- Cards player -->
       <div class="col-lg-4 col-md-2 col-sm-2">
+        <div class="box">
         <div v-bind:class="[classOn]" id="i11" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i12" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i13" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
@@ -43,7 +60,13 @@
         <div v-bind:class="[classOn]" id="i18" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i19" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i20" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
+        </div>
       </div>
+    </div>
+    </div>
+
+    <div class="row" v-bind:class="[game2]">
+      <!-- juego adivina -->
     </div>
 </div>
 </main>
@@ -58,6 +81,8 @@ export default {
       dragged: undefined,
       className: 'empty',
       classOn: 'fill',
+      game: 'disable',
+      game2: 'disable',
       level1:{
         id: 'v1',
         cad1: []
@@ -89,6 +114,13 @@ export default {
     }
   },
     methods:{
+      showG1: function(){
+        this.game = 'active';
+      },
+
+      showG2: function(){ 
+        this.game2 = 'active';
+      },
       // Drag Functions //
       dragstart: function(e) {
         this.className = 'hold';
@@ -327,6 +359,20 @@ export default {
 }
 </script>
 <style>
+.controls{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.disable{
+  display: none;
+}
+
+.active{
+  display: block;
+}
 
 .fill {
   display: inline-block;
@@ -345,9 +391,13 @@ export default {
 .piramid{
   position: relative;
   top: 0;
-  left: 100px;
+  left: 150px;
 }
 
+.box{
+  border: 2px solid gray;
+  background-color: #3498db;
+}
 #v1{
   width: 0px;
   height: 0px;
