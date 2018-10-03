@@ -2,45 +2,60 @@
     <main>
         <div class="container">
             <div class="row bg-g">
-                <div class="col-lg-8 col-sm-7">
-                    <div class="alert sm-1 animated lightSpeedIn delay-2s">
-                        <router-link class="alert-link" to="/conceptonutricion">Conceptos</router-link>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="sm-1 animated lightSpeedIn delay-2s">
+                        <a class="alert-link" href="#" @click="showModal">Conceptos</a>
                     </div>
-                    <div class="alert sm-2 animated lightSpeedIn delay-3s" role="alert">
+                    <div class="sm-2 animated lightSpeedIn delay-3s">
                         <router-link class="alert-link" to="/comidanutricion">Piramide Alimenticia</router-link>
                     </div>
-                    <div class="alert sm-3 animated lightSpeedIn delay-4s" role="alert">
+                    <div class="sm-3 animated lightSpeedIn delay-4s">
                         <router-link class="alert-link" to="/tipsnutricion">Dieta Nutrición</router-link>
                     </div>
-                    <div class="alert sm-4 animated lightSpeedIn delay-5s" role="alert">
+                    <div class="sm-4 animated lightSpeedIn delay-5s">
                         <router-link class="alert-link" to="/juegonutricion">Juega</router-link>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-5">
-                    <div class="bubble animated lightSpeedIn delay-1s" style="border-color: pink; background: pink;">
-                        Bienvenido
-                    </div>
-                    <img src="../../assets/doctora.svg" class="doctora" alt="doc" />
-                </div>
             </div>
+
+            <!-- modal concepto -->
+            <b-modal ref="myModalRef" hide-footer title="Bienvenido">
+                    <div class="d-block text-center">
+                        <video height="x" width="x">
+                           <!-- <source src="../../assets/video/example.mp4"> -->
+                        </video>
+                    </div>
+                    <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Cerrar</b-btn>
+            </b-modal>
         </div>
     </main>
 </template>
 <script>
 export default {
     name: 'homenutricion',
+    methods: {
+    showModal () {
+      this.$refs.myModalRef.show()
+    },
+    hideModal () {
+      this.$refs.myModalRef.hide()
+    }
+  }
 }
 </script>
 <style>
 .bg-g{
-    margin-top: 50px;
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
 }
 
 .sm-1, .sm-2, .sm-3, .sm-4{
     height: 80px;
-    font-size: 30px;
+    font-size: 40px;
+    margin-bottom: 40px;
     text-align: center;
-    border-radius: 150px;
+    border-radius: 15px;
 }
 
 .sm-1{
@@ -65,23 +80,18 @@ export default {
     text-decoration: none;
 }
 
-.bubble {
-    padding: 10px;
-    position: relative;
-}
-.bubble:after {
-    content: "";
-    position: absolute;
-   top: 100%;
-   left: 20px;
-   border-top: 20px solid blue;
-   border-top-color: inherit;
-   border-left: 20px solid transparent;
-   border-right: 20px solid transparent;
+.modal-content{
+    margin-top: 150px;
+    widows: auto;
+    height: auto;
 }
 
-.doctora{
-    width: 400px;
-    height: 400px;
+.modal-header{
+    background: #009999;
+    text-align: center;
+}
+
+.modal-title{
+    color: #fff;
 }
 </style>

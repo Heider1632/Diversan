@@ -43,13 +43,7 @@
         <div v-bind:class="[classOn]" id="i18" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i19" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" id="i20" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-
-        <!-- Burbuja de ayuda -->
-        <div class="bubble-help animated lightSpeedIn delay-1s" style="border-color: pink; background: pink;">
-          arrastra los alimentos en su respetivo nivel.
-        </div>
       </div>
-      
     </div>
 </div>
 </main>
@@ -101,11 +95,11 @@ export default {
         this.draggingItem = e.target.id;
         this.dragged = e.target;
         e.target.style.opacity = 0.5;
+        e.target.style.height = "50px";
+        e.target.style.width = "50px";
       },
       dragend: function(e) {
           e.target.style.opacity = 1;
-          e.target.style.height = "50px";
-          e.target.style.width = "50px";
       },
       dragenter: function(e) {
         e.preventDefault();
@@ -114,44 +108,195 @@ export default {
         this.className = 'empty';
       },
       dragdrop: function(e){
-        this.dragged.parentNode.removeChild( this.dragged );
-        event.target.appendChild( this.dragged );
-        console.log(event.target);
+        var div = document.createElement("div");
+        var clon = this.dragged.cloneNode(true);
+        //crea un hijo a un div//
+        div.appendChild(clon);
+
         //push array//
         if(event.target.id == this.level1.id){
           this.level1.cad1.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+          //level 1//
+          for(var i = 0; i < this.level1.cad1.length; i+=1){
+            if(this.level1.cad1[i] == 'i2' || this.level1.cad1[i] == 'i9' || this.level1.cad1[i] == 'i10'){
+              console.log(div);
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+              
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }else{
+              //quita el hijo que se creo//
+              event.target.removeChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else if(event.target.id == this.level2.id){
           this.level2.cad2.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+          //level 2
+          for(var i = 0; i < this.level2.cad2.length; i+=1){
+            if(this.level2.cad2[i] == 'i7'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }else{
+              //quita el hijo que se creo//
+              event.target.removeChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else if(event.target.id == this.level3.id){
           this.level3.cad3.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+            //level 3
+          for(var i = 0; i < this.level3.cad3.length; i+=1){
+            if(this.level3.cad3[i] == 'i3' || this.level3.cad3[i] == 'i4' || this.level3.cad3[i] == 'i8'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }else{
+              //quita el hijo que se creo//
+              event.target.removeChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else if(event.target.id == this.level4.id){
           this.level4.cad4.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+          //level 4//
+          for(var i = 0; i < this.level4.cad4.length; i+=1){
+            if(this.level4.cad4[i] == 'i5' || this.level4.cad4[i] == 'i18' || this.level4.cad4[i] == 'i19'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }else{
+            //quita el hijo que se creo//
+            event.target.removeChild(div);
+
+            swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else if(event.target.id == this.level5.id){
           this.level5.cad5.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+          // level 5//
+          for(var i = 0; i < this.level5.cad5.length; i+=1){
+            if(this.level5.cad5[i] == 'i17'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }else{
+              //quita el hijo que se creo
+              event.target.removeChild(div);
+              swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else if(event.target.id == this.level6.id){
           this.level6.cad6.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
+          // level 6//
+          for(var i = 0; i < this.level6.cad6.length; i+=1){
+            if(this.level6.cad6[i] == 'i20' || this.level6.cad6[i] == 'i12' ||   this.level6.cad6[i] == 'i6' || this.level6.cad6[i] == 'i16'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Buen trabajo! sigue así',
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }else{
+              //quita el hijo que se creo//
+              event.target.removeChild(div);
+
+              swal({
+                position: 'top-end',
+                type: 'error',
+                title: 'Oh oh :( intentalo de nuevo',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          }
         }else{
           this.level7.cad7.push( this.draggingItem );
-          console.log(event.target.id);
           this.draggingItem = '';
-        }
-        //results//
-
-        //level 7//
-        for (var i = 0; i < this.level7.cad7.length; i+=1) {
+          //level 7//
+          for (var i = 0; i < this.level7.cad7.length; i+=1) {
             if(this.level7.cad7[i] == 'i1'){
+              //añade el hijo a la piramide
+              event.target.appendChild(div);
+
               swal({
                 position: 'top-end',
                 type: 'success',
@@ -160,6 +305,9 @@ export default {
                 timer: 1500
              })
             }else{
+              //quita el hijo que se creo//
+              event.target.removeChild(div);
+
               swal({
                 position: 'top-end',
                 type: 'error',
@@ -169,131 +317,8 @@ export default {
               })
             }
           }
-        // level 6//
-        for(var i = 0; i < this.level6.cad6.length; i+=1){
-          if(this.level6.cad6[i] == 'i20' || this.level6.cad6[i] == 'i12' ||   this.level6.cad6[i] == 'i6' || this.level6.cad6[i] == 'i16'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            });
-          }else{
-              swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-            }
         }
-        // level 5//
-        for(var i = 0; i < this.level5.cad5.length; i+=1){
-          if(this.level5.cad5[i] == 'i17'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }else{
-            swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-          }
-        }
-
-        //level 4//
-        for(var i = 0; i < this.level4.cad4.length; i+=1){
-          if(this.level4.cad4[i] == 'i5' || this.level4.cad4[i] == 'i18' || this.level4.cad4[i] == 'i19'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }else{
-            swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-          }
-        }
-
-        //level 3
-        for(var i = 0; i < this.level3.cad3.length; i+=1){
-          if(this.level3.cad3[i] == 'i3' || this.level3.cad3[i] == 'i4' || this.level3.cad3[i] == 'i8'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }else{
-            swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-          }
-        }
-
-        //level 2
-        for(var i = 0; i < this.level2.cad2.length; i+=1){
-          if(this.level2.cad2[i] == 'i7'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }else{
-            swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-          }
-        }
-
-        //level 1//
-        for(var i = 0; i < this.level1.cad1.length; i+=1){
-          if(this.level1.cad1[i] == 'i2' || this.level1.cad1[i] == 'i9' || this.level1.cad1[i] == 'i10'){
-            swal({
-              position: 'top-end',
-              type: 'success',
-              title: 'Buen trabajo! sigue así',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }else{
-            swal({
-                position: 'top-end',
-                type: 'error',
-                title: 'Oh oh :( intentalo de nuevo',
-                showConfirmButton: false,
-                timer: 1500
-              })
-          }
-        }
-
+        //final del codigo//
       },
       dragover: function(e){
         e.preventDefault();
@@ -524,20 +549,5 @@ export default {
   background-size: cover;
 }
 
-.bubble-help{
-    bottom: 20px;
-    padding: 30px;
-    position: relative;
-}
-.bubble-help:after {
-    content: "";
-    position: absolute;
-   top: 100%;
-   left: 20px;
-   border-top: 20px solid blue;
-   border-top-color: inherit;
-   border-left: 20px solid transparent;
-   border-right: 20px solid transparent;
-}
 </style>
 

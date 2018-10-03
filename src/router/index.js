@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router'
 import home from '../components/home'
 import homeNutricion from '../components/nutricion/home-n'
-import conceptoNutricion from '../components/nutricion/concept-n'
 import comidaNutricion from '../components/nutricion/comida-n'
 import tipsNutricion from '../components/nutricion/tips-n'
 import gameNutricion from '../components/nutricion/game-n'
@@ -32,21 +31,6 @@ let router = new VueRouter({
 			path: '/inicionutricion', 
 			name: 'inicionutricion',
 			component: homeNutricion,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
-		},
-		{
-			path: '/conceptonutricion',
-			name: 'conceptonutricion',
-			component: conceptoNutricion,
 			meta: {
 				progress: {
 				  func: [
