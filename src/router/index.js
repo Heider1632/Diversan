@@ -7,7 +7,6 @@ import tipsNutricion from '../components/nutricion/tips-n'
 import gameNutricion from '../components/nutricion/game-n'
 import piramide from '../components/nutricion/piramide'
 import adivina from '../components/nutricion/adivina'
-import about from '../components/about'
 
 Vue.use(VueRouter);
 
@@ -98,22 +97,7 @@ let router = new VueRouter({
 				  ]
 				}
 			  }
-		},
-		{
-			path: '/acerca',
-			name: 'acerca',
-			component: about,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
-			}
+		}
 	]
 });
 

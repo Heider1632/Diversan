@@ -15,6 +15,7 @@
     "express": "^4.16.3",
     "google-fonts": "^1.0.0",
     "jquery": "^3.3.1",
+    "material-icons": "^0.2.3",
     "popper.js": "^1.14.4",
     "serve-static": "^1.13.2",
     "sweetalert2": "^7.28.4",

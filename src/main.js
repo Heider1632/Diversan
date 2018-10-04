@@ -6,6 +6,7 @@ import bootstrapJs from 'bootstrap/dist/js/bootstrap.min.js'
 import VueProgressBar from 'vue-progressbar'
 import BootstrapVue from 'bootstrap-vue'
 import animated from 'animate.css/animate.min.css'
+import 'material-icons/css/material-icons.css'
 
 Vue.config.productionTip = false
 

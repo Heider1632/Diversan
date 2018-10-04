@@ -13,10 +13,9 @@
                   <div class="nav-wrapper">
                         <ul>
                               <li>
-                                  <router-link to="/">Inicio</router-link>
-                              </li>
-                              <li>
-                                  <router-link to="/acerca">Acerca</router-link>
+                                  <router-link to="/">
+                                    <i class="material-icons">home</i>
+                                  </router-link>
                               </li>
                               <li>
                                     <a @click="atras">Atras</a>

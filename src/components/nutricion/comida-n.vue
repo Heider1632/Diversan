@@ -141,7 +141,7 @@ export default {
     right: 30px;
     height: 100px;
     right: 30px;
-    background-color: red;
+    background-color: #e74c3c;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -153,7 +153,7 @@ export default {
     top: 80px;
     right: 30px;
     height: 120px;
-    background-color: yellow;
+    background-color: #f1c40f;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -166,7 +166,7 @@ export default {
     top: 160px;
     right: 30px;
     height: 100px;
-    background-color: yellow;
+    background-color: #f1c40f;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -179,7 +179,7 @@ export default {
     top: 280px;
     right: 30px;
     height: 100px;
-    background-color: green;
+    background-color:#27ae60;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -192,7 +192,7 @@ export default {
     top: 350px;
     right: 30px;
     height: 100px;
-    background-color: green;
+    background-color: #27ae60;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -205,7 +205,7 @@ export default {
     top: 450px;
     right: 30px;
     height: 100px;
-    background-color: blue;
+    background-color: #3498db;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
