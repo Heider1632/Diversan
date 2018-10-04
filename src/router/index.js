@@ -5,6 +5,8 @@ import homeNutricion from '../components/nutricion/home-n'
 import comidaNutricion from '../components/nutricion/comida-n'
 import tipsNutricion from '../components/nutricion/tips-n'
 import gameNutricion from '../components/nutricion/game-n'
+import piramide from '../components/nutricion/piramide'
+import adivina from '../components/nutricion/adivina'
 import about from '../components/about'
 
 Vue.use(VueRouter);
@@ -76,6 +78,16 @@ let router = new VueRouter({
 			path: '/juegonutricion', 
 			name: 'juegonutricion',
 			component: gameNutricion,
+			children: [{
+				path: 'juegaPiramide',
+				component: piramide
+				}, 
+				{
+				path: 'juegaAdivina',
+				components: {
+					default: adivina,
+				}
+			}],
 			meta: {
 				progress: {
 				  func: [

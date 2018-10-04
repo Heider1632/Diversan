@@ -14,7 +14,7 @@
                 <div class="l5" :style="{ opacity: opacity5 }" @mouseover="showInf5" @mouseleave="hidden"></div>
                 <div class="l6" :style="{ opacity: opacity6 }" @mouseover="showInf6" @mouseleave="hidden"></div>
             </div>
-            <div class="overflow" v-bind:class="[activeClass]" :style="{ display: display }">
+            <div class="col-lg-4 col-md-4 col-sm-4" v-bind:class="[activeClass]" :style="{ display: display }">
                     {{ info }}
             </div>
         </div>
@@ -113,7 +113,7 @@ export default {
             this.opacity5 = 0.5;
         },
         hidden(){
-            this.activeClass =  'active';
+            this.display = 'none';
             this.opacity1 = null;
             this.opacity2 = null;
             this.opacity3 = null;
@@ -135,19 +135,13 @@ export default {
     margin-top: 20px;
 }
 
-.active{
-    display: none;
-}
-
-.false{
-    display: block;
-}
-
 .p1{
     position:  relative;
-    top: 50px;
+    top: 0px;
+    right: 30px;
+    height: 100px;
+    right: 30px;
     background-color: red;
-    left: 800px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -156,9 +150,10 @@ export default {
 
 .p2{
     position:  relative;
+    top: 80px;
+    right: 30px;
+    height: 120px;
     background-color: yellow;
-    left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -168,9 +163,10 @@ export default {
 
 .p3{
     position:  relative;
-    top: 150px;
+    top: 160px;
+    right: 30px;
+    height: 100px;
     background-color: yellow;
-    left: 800px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -180,9 +176,10 @@ export default {
 
 .p4{
     position:  relative;
-    top: 200px;
+    top: 280px;
+    right: 30px;
+    height: 100px;
     background-color: green;
-    left: 800px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -192,9 +189,10 @@ export default {
 
 .p5{
     position:  relative;
-    top: 250px;
+    top: 350px;
+    right: 30px;
+    height: 100px;
     background-color: green;
-    left: 800px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -204,9 +202,10 @@ export default {
 
 .p6{
     position:  relative;
-    top: 300px;
+    top: 450px;
+    right: 30px;
+    height: 100px;
     background-color: blue;
-    left: 800px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -260,65 +259,55 @@ export default {
 
 
 .l1{
-    background: url("../../assets/6 Comidas Rapida.svg");
+    background: url("../../assets/piramide/comidarapida.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin-top: 0%;
-    margin-left: 250px;
-    margin-right: 250px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 }
 
 .l2{
-    background: url("../../assets/5 Carnes.svg");
+    background: url("../../assets/piramide/carnes.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: 0%;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-top: -20px;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
 }
 
 .l3{
-    background: url("../../assets/4 Lacteos.svg");
+    background: url("../../assets/piramide/lacteos.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: 0%;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-top: -20px;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
 }
 .l4{
-    background: url("../../assets/3 Frutas.svg");
+    background: url("../../assets/piramide/frutas.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin-top: 0%;
-    margin-left: 100px;
-    margin-right: 100px;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
 }
 .l5{
-    background: url("../../assets/2 Arinas.svg");
+    background: url("../../assets/piramide/harinas.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin-top: 0%;
-    margin-left: 50px;
-    margin-right: 50px;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
 }
 
 .l6{
-    background: url("../../assets/1 Agua.svg");
+    background: url("../../assets/piramide/agua.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

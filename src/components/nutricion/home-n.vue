@@ -3,16 +3,16 @@
         <div class="container">
             <div class="row bg-g">
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="sm-1 animated lightSpeedIn delay-2s">
-                        <a class="alert-link" href="#" @click="showModal">Conceptos</a>
+                    <div class="sm-1 animated lightSpeedIn delay-500ms">
+                        <a class="alert-link" href="#" @click="showModal">Aprendamos más</a>
                     </div>
-                    <div class="sm-2 animated lightSpeedIn delay-3s">
+                    <div class="sm-2 animated lightSpeedIn delay-1000ms">
                         <router-link class="alert-link" to="/comidanutricion">Piramide Alimenticia</router-link>
                     </div>
-                    <div class="sm-3 animated lightSpeedIn delay-4s">
-                        <router-link class="alert-link" to="/tipsnutricion">Dieta Nutrición</router-link>
+                    <div class="sm-3 animated lightSpeedIn delay-1500ms">
+                        <router-link class="alert-link" to="/tipsnutricion">Alimentación sana</router-link>
                     </div>
-                    <div class="sm-4 animated lightSpeedIn delay-5s">
+                    <div class="sm-4 animated lightSpeedIn delay-2000ms">
                         <router-link class="alert-link" to="/juegonutricion">Juega</router-link>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ export default {
 }
 
 .modal-content{
-    margin-top: 150px;
+    margin-top: 100px;
     widows: auto;
     height: auto;
 }
