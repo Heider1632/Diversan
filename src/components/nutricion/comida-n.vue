@@ -147,9 +147,7 @@ export default {
     position:  relative;
     top: 50px;
     background-color: red;
-    position: absolute;
     left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -158,9 +156,7 @@ export default {
 
 .p2{
     position:  relative;
-    top: 100px;
     background-color: yellow;
-    position: absolute;
     left: 800px;
     top: 100px;
     color:#000;
@@ -174,9 +170,7 @@ export default {
     position:  relative;
     top: 150px;
     background-color: yellow;
-    position: absolute;
     left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -188,9 +182,7 @@ export default {
     position:  relative;
     top: 200px;
     background-color: green;
-    position: absolute;
     left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -202,9 +194,7 @@ export default {
     position:  relative;
     top: 250px;
     background-color: green;
-    position: absolute;
     left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
@@ -216,9 +206,7 @@ export default {
     position:  relative;
     top: 300px;
     background-color: blue;
-    position: absolute;
     left: 800px;
-    top: 100px;
     color:#000;
     border-radius: 15px;
     animation-duration: 500ms;
