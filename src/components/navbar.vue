@@ -14,11 +14,17 @@
                         <ul>
                               <li>
                                   <router-link to="/">
-                                    <i class="material-icons">home</i>
+                                    <svg style="width:50px;height:50px" viewBox="0 0 24 24">
+                                          <path fill="#fff" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+                                    </svg>
                                   </router-link>
                               </li>
                               <li>
-                                    <a @click="atras">Atras</a>
+                                    <a @click="atras">
+                                       <svg style="width:50px;height:50px" viewBox="0 0 24 24">
+                                          <path fill="#fff" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                                       </svg>
+                                    </a>
                               </li>
                         </ul>
                   </div>
