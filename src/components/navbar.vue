@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
             <nav>
                   <input type="checkbox" id="nav" class="hidden">
                   <label for="nav" class="nav-btn">
@@ -14,16 +14,15 @@
                         <ul>
                               <li>
                                   <router-link to="/">
-                                    <svg style="width:40px;height:40px" viewBox="0 0 24 24">
-                                          <path fill="#fff" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
-                                    </svg>
+                                    <img src="../assets/icons/fireplace.svg" class="home" />
+                                    <h4 class="a">INICIO</h4>
                                   </router-link>
                               </li>
+                              <br>
                               <li>
                                     <a @click="atras">
-                                       <svg style="width:40px;height:40px" viewBox="0 0 24 24">
-                                          <path fill="#fff" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-                                       </svg>
+                                       <img src="../assets/icons/left-arrow.svg" class="home" />
+                                       <h4 class="a">ATRAS</h4>
                                     </a>
                               </li>
                         </ul>
@@ -67,15 +66,8 @@ nav ul {
 
 nav ul li {
       display: block;
-      float: left;
-}
-
-nav ul li:not(:first-child) {
-      margin-left: 48px;
-}
-
-nav ul li:last-child {
-      margin-right: 24px;
+      float: right;
+      margin-right: 50px;
 }
 
 nav ul li a {
@@ -87,6 +79,10 @@ nav ul li a {
       font-size: 20px;
       letter-spacing: 1.2px;
       font-weight: 600;
+}
+
+.a{
+      color: #fff;
 }
 
 @media screen and (max-width: 864px) {
@@ -101,7 +97,7 @@ nav ul li a {
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: #fff;
+            background: rgba(0,0,0, 0.5);
             opacity: 0;
             transition: all 0.2s ease;
       }
@@ -127,14 +123,6 @@ nav ul li a {
 
       .nav-wrapper ul li:nth-child(2) a {
             transition-delay: 0.3s;
-      }
-
-      .nav-wrapper ul li:nth-child(3) a {
-            transition-delay: 0.4s;
-      }
-
-      .nav-wrapper ul li:nth-child(4) a {
-            transition-delay: 0.5s;
       }
 
       .nav-wrapper ul li:not(:first-child) {
@@ -220,6 +208,11 @@ nav ul li a {
 
 .hidden {
       display: none;
+}
+
+.home{
+      width: 80px;
+      height: 80px;
 }
 </style>
 

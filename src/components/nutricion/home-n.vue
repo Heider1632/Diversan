@@ -2,19 +2,24 @@
     <main>
         <div class="container">
             <div class="row bg-g">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="sm-1 animated lightSpeedIn delay-500ms">
-                        <a class="alert-link" href="#" @click="showModal">Aprendamos más</a>
+                <div class="col-lg-12 col-md-12 col-sm-8">
+                    <div class="sm animated lightSpeedIn delay-500ms">
+                        <img src="../../assets/icons/handshake.svg" class="pic1" />
+                        <a class="alert-link" href="#" @click="showModal">Aprendamos</a>
                     </div>
-                    <div class="sm-2 animated lightSpeedIn delay-1000ms">
-                        <router-link class="alert-link" to="/comidanutricion">Piramide Alimenticia</router-link>
+                    <div class="sm animated lightSpeedIn delay-1000ms">
+                        <img src="../../assets/icons/porridge.svg" class="pic2" />
+                        <router-link class="alert-link" to="/comidanutricion">Piramide</router-link>
                     </div>
-                    <div class="sm-3 animated lightSpeedIn delay-1500ms">
+                    <div class="sm animated lightSpeedIn delay-1500ms" >
+                        <img src="../../assets/icons/apple.svg" class="pic3" />
                         <router-link class="alert-link" to="/tipsnutricion">Alimentación sana</router-link>
                     </div>
-                    <div class="sm-4 animated lightSpeedIn delay-2000ms">
+                    <div class="sm animated lightSpeedIn delay-2000ms">
+                        <img src="../../assets/icons/windmill.svg" class="pic4" />
                         <router-link class="alert-link" to="/juegonutricion">Juega</router-link>
                     </div>
+                <div class="h-b"></div>
                 </div>
             </div>
 
@@ -44,40 +49,47 @@ export default {
 }
 </script>
 <style>
+.container{
+    margin-left: 50px;
+}
 .bg-g{
-    margin-top: 100px;
+    margin-top: 180px;
     justify-content: center;
     text-align: center;
 }
 
-.sm-1, .sm-2, .sm-3, .sm-4{
-    height: 80px;
-    font-size: 40px;
-    margin-bottom: 40px;
-    text-align: center;
-    border-radius: 15px;
+.pic1, .pic2, .pic3, .pic4{
+    position: relative;
+    bottom: 30px;
+    width: 300px;
+    height: 150px;
+
 }
 
-.sm-1{
-    background-color: teal;
+.h-b{
+    position: relative;
+    float: left;
+    bottom: 70px;
+    height: 110px;
+    width: 100%;
+    background-color: #ff4d4d;
+    transform: skew(-20deg);
+    z-index: 0;
 }
 
-.sm-2{
-    background-color: darkgoldenrod;
+.sm{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    z-index: 100;
 }
 
-.sm-3{
-    background-color:darkgreen;
-}
-
-.sm-4{
-   background-color:crimson;
-   
-}
-
-.sm-1 > a, .sm-2 > a, .sm-3 > a, .sm-4 > a{
-    color: #fff;
+.sm a{
     text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 .modal-content{
