@@ -3,19 +3,50 @@
 <div class="container">
   <div class="row controls">
       <!-- primer juego -->
-      <div class="col-lg-6 col-md-6 col-sm-6">
-          <b-alert show variant="warning">
-            <router-link @click.native="hide()" to="/juegonutricion/juegaAdivina">Juega Adivina</router-link>
-          </b-alert>
+      <div class="col-lg-4 col-md-4 col-sm-2 games">
+          <b-card title="Juega Adivina"
+            img-src="../assets/games/cerebro.png"
+            img-alt="Adivina"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2">
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+              <router-link  to="/juegoAdivina">Juega Adivina</router-link>
+            </b-card>  
       </div>  
       <!-- segundo juego -->
-       <div class="col-lg-6 col-md-6 col-sm-6">
-           <b-alert show variant="primary">
-             <router-link @click.native="hide()" to="/juegonutricion/juegaPiramide">Juega Piramide</router-link>
-           </b-alert>
+       <div class="col-lg-4 col-md-4 col-sm-2 games">
+          <b-card title="Juega Piramide"
+            img-src="../../assets/games/cerebro.png"
+            img-alt="Piramide"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2">
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+              <router-link to="/juegoPiramide">Juega Piramide</router-link>
+            </b-card>          
        </div>
-
-       <div v-bind:class="[option]"></div>
+      <!-- tercer juego -->
+       <div class="col-lg-4 col-md-4 col-sm-2 games">
+          <b-card title="Juega Concentrate"
+            img-src="../../assets/games/cerebro.png"
+            img-alt="Cerebro"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2">
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+              <router-link to="/juegoConcentrate">Juega Concentrate</router-link>
+            </b-card>
+       </div>
     </div>
 </div>
 
@@ -28,27 +59,27 @@ export default {
   name: 'game',
   data(){
     return{
-      option: 'option',
     }
   },
   created(){
-    this.option = 'option';
   },
   methods: {
-    hide: function() {
-    // Do what you want here.
-    this.option = 'hide';
-    }
   }
 
 }
 </script>
 <style>
 .controls{
-  margin-top: 50px;
+  margin-top: 150px;
+  position: relative;
+  right: 200px;
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.games{
+  display: inline-block;
 }
 
 .option{

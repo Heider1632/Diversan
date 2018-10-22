@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid bg-g">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row down">
             <div class="col-lg-8 col-sm-8">
             <h3 align="center">Tips</h3>
             <div class="bg-l">
@@ -172,6 +172,9 @@
     </div>
 </template>
 <style>
+.down{
+    margin-top: 100px;
+}
 .bg-l{
     display: flex;
     justify-content: center;
