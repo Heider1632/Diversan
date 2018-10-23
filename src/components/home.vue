@@ -25,12 +25,12 @@ export default {
 
 <style scoped>
 .wrapper{
-    margin-top: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .centrador{
+    margin-top: 50%;
     width: 300px;
     height: 300px;
     background: url("../assets/logo.svg");

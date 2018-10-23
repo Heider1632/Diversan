@@ -1,21 +1,15 @@
 <template>
     <div class="container-fluid">
-        <div class="row inf">
-            <div class="">
-                <b-button size="lg" variant="outline-success" @click="show()">Piramide Alimenticia</b-button>
-            </div>
-        </div>
-        <div class="row bg-a">      
-            <div class="col-lg-8 col-md-8 col-sm-8 main">
-                <div class="l1" :style="{ opacity: opacity1 }" @mouseover="showInf1" @mouseleave="hidden"></div>
-                <div class="l2" :style="{ opacity: opacity2 }" @mouseover="showInf2" @mouseleave="hidden"></div>
-                <div class="l3" :style="{ opacity: opacity3 }" @mouseover="showInf3" @mouseleave="hidden"></div>
-                <div class="l4" :style="{ opacity: opacity4 }" @mouseover="showInf4" @mouseleave="hidden"></div>
-                <div class="l5" :style="{ opacity: opacity5 }" @mouseover="showInf5" @mouseleave="hidden"></div>
-                <div class="l6" :style="{ opacity: opacity6 }" @mouseover="showInf6" @mouseleave="hidden"></div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4" v-bind:class="[activeClass]" :style="{ display: display }">
-                    {{ info }}
+        <div class="row">      
+            <div class="col-lg-12 col-md-12 col-sm-12 main">
+                <div class="box-piramide">
+                <img src="../../assets/piramide/comidarapida.svg" class="elements-piramide el1" @mouseover="showInf1"/>
+                <img src="../../assets/piramide/carnes.svg" class="elements-piramide el2" @mouseover="showInf2" />
+                <img src="../../assets/piramide/lacteos.svg" class="elements-piramide el3" @mouseover="showInf3" />
+                <img src="../../assets/piramide/frutas.svg" class="elements-piramide el4" @mouseover="showInf4" />
+                <img src="../../assets/piramide/harinas.svg" class="elements-piramide el5" @mouseover="showInf5" />
+                <img src="../../assets/piramide/agua.svg" class="elements-piramide el6" @mouseover="showInf6" />
+                </div>
             </div>
         </div>
 
@@ -31,42 +25,32 @@
     </div>
 </template>
 <script>
+import swal from 'sweetalert2'
 export default {
     data() {
         return {
-           activeClass: '',
-           info: '',
-           display: 'none',
-           opacity1: null,
-           opacity2: null,
-           opacity3: null,
-           opacity4: null,
-           opacity5: null,
-           opacity6: null
         }
     },
     methods: {
         showInf1(){
-            this.className = 'text-1';
-            this.display = 'block';
-            this.activeClass = 'p1';
-            this.info = '6. El sexto grupo incluye grasas, aceites y dulces. ¡Estos alimentos te aportan muchísima energía y pocos nutrientes y por eso debes consumirlos en menor cantidad!.';
-            this.opacity2 = 0.5;
-            this.opacity3 = 0.5;
-            this.opacity4 = 0.5;
-            this.opacity5 = 0.5;
-            this.opacity6 = 0.5;
+            swal({
+                position: 'top-start',
+                type: 'info',
+                title: 'Sexto Grupo',
+                text: 'El sexto grupo incluye grasas, aceites y dulces. ¡Estos alimentos te aportan muchísima energía y pocos nutrientes y por eso debes consumirlos en menor cantidad!.',
+                showConfirmButton: false,
+                timer: 3000
+            })
         },
         showInf2(){
-            this.className = 'text-2';
-            this.display = 'block';
-            this.activeClass = 'p2';
-            this.info = '5. El quinto grupo incluye carnes, pescados y huevos. Estos alimentos son muy ricos en proteínas, que son los bloquecillos que construyen tu cuerpo. Son fundamentales pata tu optimo crecimiento.';
-            this.opacity1 = 0.5;
-            this.opacity3 = 0.5;
-            this.opacity4 = 0.5;
-            this.opacity5 = 0.5;
-            this.opacity6 = 0.5;
+            swal({
+                position: 'top-start',
+                type: 'info',
+                title: 'Quinto Grupo',
+                text: ' El quinto grupo incluye carnes, pescados y huevos. Estos alimentos son muy ricos en proteínas, que son los bloquecillos que construyen tu cuerpo. Son fundamentales pata tu optimo crecimiento.',
+                showConfirmButton: false,
+                timer: 3000
+            })
         },
         showInf3(){
             this.className = 'text-3';
@@ -131,86 +115,57 @@ export default {
 }
 </script>
 <style>
-.bg-a{
-    margin-top: 20px;
+.box-piramide{
+    display:block;
+    margin-left:30%;
+    float:left;
+    width: 100%;
+    min-height:10;
 }
 
-.p1{
-    position:  relative;
-    top: 0px;
-    right: 30px;
-    height: 100px;
-    right: 30px;
-    background-color: #e74c3c;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
+.elements-piramide{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle
 }
 
-.p2{
-    position:  relative;
-    top: 80px;
-    right: 30px;
-    height: 120px;
-    background-color: #f1c40f;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
-    animation-direction: alternate;
+.el1{
+    width: 200px;
+    height: 300px;
+    right: 60px;
 }
 
-.p3{
-    position:  relative;
-    top: 160px;
-    right: 30px;
-    height: 100px;
-    background-color: #f1c40f;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
-    animation-direction: alternate;
+.el2{
+    bottom: 180px;
+    width: 350px;
+    height: 300px;
+    right: 130px;
+}
+.el3{
+    bottom: 360px;
+    width: 500px;
+    height: 300px;
+    right: 190px;
 }
 
-.p4{
-    position:  relative;
-    top: 280px;
-    right: 30px;
-    height: 100px;
-    background-color:#27ae60;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
-    animation-direction: alternate;
+.el4{
+    bottom: 480px;
+    width: 550px;
+    height: 300px;
+    right: 130px;
 }
+ .el5{
+    bottom: 580px;
+    width: 600px;
+    height: 300px;
+    right: 130px;
+ }
 
-.p5{
-    position:  relative;
-    top: 350px;
-    right: 30px;
-    height: 100px;
-    background-color: #27ae60;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
-    animation-direction: alternate;
-}
-
-.p6{
-    position:  relative;
-    top: 450px;
-    right: 30px;
-    height: 100px;
-    background-color: #3498db;
-    color:#000;
-    border-radius: 15px;
-    animation-duration: 500ms;
-    animation-name: slidein;
-    animation-direction: alternate;
+.el6{
+    bottom: 580px;
+    width: 600px;
+    height: 300px;
+    right: 130px;  
 }
 
 .main{
@@ -251,70 +206,4 @@ export default {
     }
 }
 
-.l1, .l2, .l3, .l4, .l5, .l6{
-    height: 90px;
-    width: auto;
-}
-
-
-
-.l1{
-    background: url("../../assets/piramide/comidarapida.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: 0%;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-}
-
-.l2{
-    background: url("../../assets/piramide/carnes.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: -20px;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-}
-
-.l3{
-    background: url("../../assets/piramide/lacteos.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: -20px;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-}
-.l4{
-    background: url("../../assets/piramide/frutas.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: 0%;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-}
-.l5{
-    background: url("../../assets/piramide/harinas.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: 0%;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-}
-
-.l6{
-    background: url("../../assets/piramide/agua.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: 0%;
-    margin-left: 0px;
-    margin-right: 0px;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-}
 </style>

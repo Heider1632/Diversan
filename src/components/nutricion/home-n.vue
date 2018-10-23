@@ -4,11 +4,11 @@
             <div class="row bg-g">
                 <div class="col-lg-12 col-md-12 col-sm-8">
                     <div class="sm animated lightSpeedIn delay-500ms">
-                        <img src="../../assets/icons/handshake.svg" class="pic1"/>
+                        <img src="../../assets/icons/handshake.svg" class="pic1"  @click="showModal"/>
                         <a class="alert-link" href="#" @click="showModal">Aprendamos</a>
                     </div>
                     <div class="sm animated lightSpeedIn delay-1000ms">
-                        <img src="../../assets/icons/porridge.svg" class="pic2" @click="goPiramide()"/>
+                        <img src="../../assets/icons/piramide-ico.svg" class="pic2" @click="goPiramide()"/>
                         <router-link class="alert-link" to="/comidanutricion">Piramide</router-link>
                     </div>
                     <div class="sm animated lightSpeedIn delay-1500ms" >
@@ -94,11 +94,10 @@ export default {
 .h-b{
     position: relative;
     float: left;
-    bottom: 70px;
-    height: 110px;
+    bottom: 40px;
+    height: 50px;
     width: 100%;
     background-color: #ff4d4d;
-    transform: skew(-20deg);
     z-index: 0;
 }
 

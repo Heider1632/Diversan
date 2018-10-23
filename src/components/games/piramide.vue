@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row bg">
         <!-- juego piramide -->
-        <div class="col-lg-8 col-md-8 col-sm-6">
+        <div class="col-lg-6 col-md-8 col-sm-12">
           <div class="piramid">
             <div :id="level1.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
             <div :id="level2.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
@@ -14,7 +14,7 @@
           </div>
         </div>
       <!-- Cards player -->
-      <div class="col-lg-4 col-md-4 col-sm-2">
+      <div class="col-lg-5 col-md-12 col-sm-12">
         <div class="box">
         <div v-bind:class="[classOn]" :id="i1" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
         <div v-bind:class="[classOn]" :id="i2" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
@@ -107,7 +107,8 @@ export default {
         this.draggingItem = e.target.id;
         this.dragged = e.target;
         e.target.style.opacity = 0.5;
-        e.target.width = '50px';
+        e.target.style.width = '50px';
+        e.target.style.height = '50px';
       },
       dragend: function(e) {
           e.target.style.opacity = 1;
@@ -446,7 +447,7 @@ export default {
 }
 
 .piramid{
-  position: absolute;
+  position: relative;
   left: 250px;
 }
 
@@ -541,8 +542,8 @@ export default {
 /* elementos para dropear */
 
 #i1{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/agua.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -550,8 +551,8 @@ export default {
 }
 
 #i2{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/hamburguesa.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -559,8 +560,8 @@ export default {
 }
 
 #i3{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/jamon.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -568,8 +569,8 @@ export default {
 }
 
 #i4{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/filete.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -577,8 +578,8 @@ export default {
 }
 
 #i5{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/fresas.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -586,120 +587,120 @@ export default {
 }
 
 #i6{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/cereal.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i7{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/avena.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i8{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/tocino.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i9{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/emparedado.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i10{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/pizza.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i11{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/pastelito.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i12{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/pan.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i13{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/papas-fritas.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i14{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/pan.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i15{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/pollo.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i16{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/queso.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i17{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/verduras.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i18{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/naranja.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i19{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/manzana.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 #i20{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/icons/leche.svg");
   background-repeat: no-repeat;
   background-position: center;

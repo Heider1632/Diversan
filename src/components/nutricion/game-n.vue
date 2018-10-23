@@ -5,7 +5,8 @@
       <!-- primer juego -->
       <div class="col-lg-4 col-md-4 col-sm-2 games">
           <b-card title="Juega Adivina"
-            img-src="../assets/games/cerebro.png"
+            @click="goAdivina()"
+            :img-src="require('@/assets/games/pregunta.png')"
             img-alt="Adivina"
             img-top
             tag="article"
@@ -14,28 +15,28 @@
             <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
             </p>
-              <router-link  to="/juegoAdivina">Juega Adivina</router-link>
             </b-card>  
       </div>  
       <!-- segundo juego -->
        <div class="col-lg-4 col-md-4 col-sm-2 games">
           <b-card title="Juega Piramide"
-            img-src="../../assets/games/cerebro.png"
+            @click="goPiramide()"
+            :img-src="require('@/assets/icons/piramide-ico.svg')"
             img-alt="Piramide"
             img-top
             tag="article"
             style="max-width: 20rem;"
             class="mb-2">
-            <p class="card-text">
+              <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-              <router-link to="/juegoPiramide">Juega Piramide</router-link>
+              </p>
             </b-card>          
        </div>
       <!-- tercer juego -->
        <div class="col-lg-4 col-md-4 col-sm-2 games">
           <b-card title="Juega Concentrate"
-            img-src="../../assets/games/cerebro.png"
+            @click="goConcentrate()"
+            :img-src="require('@/assets/games/cerebro.png')"
             img-alt="Cerebro"
             img-top
             tag="article"
@@ -44,7 +45,6 @@
             <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
             </p>
-              <router-link to="/juegoConcentrate">Juega Concentrate</router-link>
             </b-card>
        </div>
     </div>
@@ -61,16 +61,23 @@ export default {
     return{
     }
   },
-  created(){
-  },
   methods: {
+    goConcentrate(){
+      this.$router.push({ path: '/juegoConcentrate' })
+    },
+    goPiramide(){
+      this.$router.push({ path: '/juegoPiramide' })
+    },
+    goAdivina(){
+      this.$router.push({ path: '/juegoAdivina' })
+    }
   }
 
 }
 </script>
 <style>
 .controls{
-  margin-top: 150px;
+  margin-top: 80px;
   position: relative;
   right: 200px;
   display: flex;
@@ -82,17 +89,13 @@ export default {
   display: inline-block;
 }
 
-.option{
-  width: 400px;
-  height: 500px;
-  background: url("../../assets/boy.svg");
-  background-size: 90% 90%;
-  background-position: center;
-  background-repeat: no-repeat
+.card:hover{
+  transition: 500ms all ease-out;
+  background-color:  #4d94ff;
 }
 
-.hide{
-  display: none;
+.card:hover p, .card:hover a{
+  color: white;
 }
 </style>
 

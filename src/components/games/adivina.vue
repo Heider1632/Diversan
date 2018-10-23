@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row bg">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <b-card class="box1 q-1" bg-variant="light">
                     <b-form-group horizontal

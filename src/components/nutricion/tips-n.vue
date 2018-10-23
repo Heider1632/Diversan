@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row down">
-            <div class="col-lg-8 col-sm-8">
+            <div class="col-lg-8 col-md-12 col-sm-12">
             <h3 align="center">Tips</h3>
             <div class="bg-l">
                 <div role="tablist">
@@ -159,7 +159,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-lg-4 col-sm-4">
+            <div class="col-lg-3 col-md-12 col-sm-12">
                 <aside class="aside">
                     <h3 align="center">Dieta: </h3>
                     <p class="lead text-justify">
@@ -183,8 +183,8 @@
 .aside {
   background-color: blanchedalmond;
   border-radius: 25px;
-  padding: 30px;
-  margin-right: 50px;
+  padding: 50px;
+  width: 100%;
 }
 
 .card{

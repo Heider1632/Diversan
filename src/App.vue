@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-      <navbar />
-      <router-view />
-      <vue-progress-bar></vue-progress-bar>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-8">
+          <router-view />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2">
+          <navbar />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,40 +1,71 @@
 <template>
-    <div class="container-fluid">
-            <nav>
-                  <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                  </label>
-                  <!--<div class="logo">
-                        <a href="#">DiverSan</a>
-                  </div>-->
-                  <div class="nav-wrapper">
-                        <ul>
-                              <li>
-                                  <router-link to="/">
+      <nav>
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav-btn">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+            </label>
+
+            <div class="nav-wrapper">
+                  <ul>
+                        <li>
+                              <router-link to="/">
                                     <img src="../assets/icons/fireplace.svg" class="home" />
-                                    <h4 class="a">INICIO</h4>
-                                  </router-link>
-                              </li>
+                                    <h4 class="a">{{ item1 }}</h4>
+                              </router-link>
+                        </li>
                               <br>
-                              <li>
-                                    <a @click="atras">
-                                       <img src="../assets/icons/left-arrow.svg" class="home" />
-                                       <h4 class="a">ATRAS</h4>
-                                    </a>
-                              </li>
-                        </ul>
-                  </div>
-            </nav>
-      </div>
+                        <li>
+                              <a @click="atras">
+                                    <img src="../assets/icons/left-arrow.svg" class="home" />
+                                    <h4 class="a">{{ item2 }}</h4>
+                              </a>
+                        </li>
+                        <li>
+                              <a href="#" @click="cambiarEspañol()">
+                                    <img src="../assets/icons/español.png" class="es" />
+                                     <h4 class="a">{{ item3 }}</h4>
+                              </a>
+                        </li>
+                        <li>
+                              <a href="#" @click="cambiarIngles()">
+                                    <img src="../assets/icons/usa.png" class="es" />
+                                     <h4 class="a">{{ item4 }}</h4>
+                              </a>
+                        </li>
+                  </ul>
+            </div>
+      </nav>
 </template>
 <script>
 export default {
-    methods: {
+      data(){
+            return{
+                  item1: 'INICIO',
+                  item2: 'ATRAS',
+                  item3: 'ESPAÑOL',
+                  item4: 'INGLÉS',
+                  ingles: 'false',
+            }
+      },
+      created(){
+            if(this.ingles == 'true'){
+                  this.item1 = 'HOME';
+                  this.item2 = 'BACK';
+                  this.item3 = 'SPAIN';
+                  this.item4 = 'ENGLISH';
+            }
+      },
+      methods: {
           atras(){
                 this.$router.go(-1);
+          },
+          cambiarEspañol(){
+                this.ingles = 'false';
+          },
+          cambiarIngles(){
+                this.ingles = 'true';
           }
     }
 }
@@ -42,22 +73,6 @@ export default {
 <style>
 nav {
       padding: 6px;
-}
-
-.logo {
-      float: left;
-      padding: 8px;
-      margin-left: 16px;
-      margin-top: 8px;
-}
-
-.logo a {
-      color:#03A9F4;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 30px;
-      letter-spacing: 0px;
-      text-decoration: none;
 }
 
 nav ul {
@@ -79,6 +94,13 @@ nav ul li a {
       font-size: 20px;
       letter-spacing: 1.2px;
       font-weight: 600;
+}
+
+.es{
+      float: right;
+      margin-top: 10px;
+      height: 75px;
+      width: 100px;
 }
 
 .a{
@@ -123,6 +145,14 @@ nav ul li a {
 
       .nav-wrapper ul li:nth-child(2) a {
             transition-delay: 0.3s;
+      }
+
+      .nav-wrapper ul li:nth-child(3) a {
+            transition-delay: 0.4s;
+      }
+
+      .nav-wrapper ul li:nth-child(4) a {
+            transition-delay: 0.5s;
       }
 
       .nav-wrapper ul li:not(:first-child) {
