@@ -23,14 +23,14 @@
                               </a>
                         </li>
                         <li>
-                              <a href="#" @click="cambiarEspañol()">
-                                    <img src="../assets/icons/español.png" class="es" />
-                                     <h4 class="a">{{ item3 }}</h4>
+                              <a href="#">
+                                    <img src="../assets/icons/español.png" class="es" v-on:click="cambiarNormal()"/>
+                                    <h4 class="a">{{ item3 }}</h4>
                               </a>
                         </li>
                         <li>
-                              <a href="#" @click="cambiarIngles()">
-                                    <img src="../assets/icons/usa.png" class="es" />
+                              <a href="#">
+                                    <img src="../assets/icons/usa.png" class="es" v-on:click="cambiarIngles()"/>
                                      <h4 class="a">{{ item4 }}</h4>
                               </a>
                         </li>
@@ -46,26 +46,29 @@ export default {
                   item2: 'ATRAS',
                   item3: 'ESPAÑOL',
                   item4: 'INGLÉS',
-                  ingles: 'false',
+                  ingles: undefined,
             }
       },
       created(){
-            if(this.ingles == 'true'){
+            if(this.ingles === true){
+                  console.log('hola');
                   this.item1 = 'HOME';
                   this.item2 = 'BACK';
                   this.item3 = 'SPAIN';
                   this.item4 = 'ENGLISH';
+            }else{
+                  console.log('jaja');
             }
       },
       methods: {
           atras(){
                 this.$router.go(-1);
           },
-          cambiarEspañol(){
-                this.ingles = 'false';
+          cambiarNormal(){
+                this.ingles = false;
           },
           cambiarIngles(){
-                this.ingles = 'true';
+                this.ingles = true;
           }
     }
 }

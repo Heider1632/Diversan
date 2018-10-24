@@ -1,14 +1,30 @@
 <template>
     <div class="container-fluid">
         <div class="row">      
-            <div class="col-lg-12 col-md-12 col-sm-12 main">
+            <div class="col-lg-8 col-md-8 col-sm-12 main">
                 <div class="box-piramide">
-                <img src="../../assets/piramide/comidarapida.svg" class="elements-piramide el1" @mouseover="showInf1"/>
-                <img src="../../assets/piramide/carnes.svg" class="elements-piramide el2" @mouseover="showInf2" />
-                <img src="../../assets/piramide/lacteos.svg" class="elements-piramide el3" @mouseover="showInf3" />
-                <img src="../../assets/piramide/frutas.svg" class="elements-piramide el4" @mouseover="showInf4" />
-                <img src="../../assets/piramide/harinas.svg" class="elements-piramide el5" @mouseover="showInf5" />
-                <img src="../../assets/piramide/agua.svg" class="elements-piramide el6" @mouseover="showInf6" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-8 col-sm-12">
+                <div class="elements-group">
+                    <div class="g1">
+                        <h3>Grupo 6</h3>
+                    </div>
+                    <div class="g2">
+                        <h3>Grupo 5</h3>
+                    </div>
+                    <div class="g3">
+                        <h3>Grupo 4</h3>
+                    </div>
+                    <div class="g4">
+                        <h3>Grupo 3</h3>
+                    </div>
+                    <div class="g5">
+                        <h3>Grupo 2</h3>
+                    </div>
+                    <div class="g6">
+                        <h3>Grupo 1</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,57 +69,16 @@ export default {
             })
         },
         showInf3(){
-            this.className = 'text-3';
-            this.display = 'block';
-            this.activeClass = 'p3';
             this.info = '4. El cuarto grupo son los lacteos, que te proveen de calcio que te ayudan a mantener huesos sanos y fuertes.';
-            this.opacity1 = 0.5;
-            this.opacity2 = 0.5;
-            this.opacity4 = 0.5;
-            this.opacity5 = 0.5;
-            this.opacity6 = 0.5;
         },
         showInf4(){
-            this.className = 'text-4';
-            this.display = 'block';
-            this.activeClass = 'p4';
             this.info = '3. El tercer grupo incluye las frutas, las verduras y las hortalizas.¡Son alimentos ricos en vitaminas y minerales!';
-            this.opacity1 = 0.5;
-            this.opacity2 = 0.5;
-            this.opacity3 = 0.5;
-            this.opacity5 = 0.5;
-            this.opacity6 = 0.5;
         },
         showInf5(){
-            this.className = 'text-5';
-            this.display = 'block';
-            this.activeClass = 'p5';
             this.info = '2. El segundo grupo incluye alimentos como cereales, pan, arroz, leguminosas y pasta.¡Estos son los que te aportan más vitaminas y carbohidratos!';
-            this.opacity1 = 0.5;
-            this.opacity2 = 0.5;
-            this.opacity3 = 0.5;
-            this.opacity4 = 0.5;
-            this.opacity6 = 0.5;
         },
         showInf6(){
-            this.className = 'text-6';
-            this.display = 'block';
-            this.activeClass = 'p6';
             this.info = '1. El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.';
-            this.opacity1 = 0.5;
-            this.opacity2 = 0.5;
-            this.opacity3 = 0.5;
-            this.opacity4 = 0.5;
-            this.opacity5 = 0.5;
-        },
-        hidden(){
-            this.display = 'none';
-            this.opacity1 = null;
-            this.opacity2 = null;
-            this.opacity3 = null;
-            this.opacity4 = null;
-            this.opacity5 = null;
-            this.opacity6 = null;
         },
         show(){
             this.$refs.myModalPiramide.show();
@@ -115,70 +90,59 @@ export default {
 }
 </script>
 <style>
-.box-piramide{
-    display:block;
-    margin-left:30%;
-    float:left;
-    width: 100%;
-    min-height:10;
-}
-
-.elements-piramide{
-    position: relative;
-    display: table-cell;
-    vertical-align: middle
-}
-
-.el1{
-    width: 200px;
-    height: 300px;
-    right: 60px;
-}
-
-.el2{
-    bottom: 180px;
-    width: 350px;
-    height: 300px;
-    right: 130px;
-}
-.el3{
-    bottom: 360px;
-    width: 500px;
-    height: 300px;
-    right: 190px;
-}
-
-.el4{
-    bottom: 480px;
-    width: 550px;
-    height: 300px;
-    right: 130px;
-}
- .el5{
-    bottom: 580px;
-    width: 600px;
-    height: 300px;
-    right: 130px;
- }
-
-.el6{
-    bottom: 580px;
-    width: 600px;
-    height: 300px;
-    right: 130px;  
-}
-
 .main{
     text-align: center;
 }
 
-.inf{
-    margin-top: 50px;
+.box-piramide{
+    height: 700px;
+    width: 1000px;
+    background: url('../../assets/piramide/piramide.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.elements-group{
+    margin-top: 100px;
+}
+
+.g1, .g2, .g3, .g4, .g5, .g6{
+    margin-top: 70px;
     display: flex;
     justify-content: center;
     text-align: center;
+    height: 20px;
+    width: 50%;
+    background: #fff;
 }
 
+h3{
+    position: relative;
+    bottom: 30px;
+}
+
+.g1{
+    background-color: #e74c3c;
+}
+
+.g2{
+     background-color: #f1c40f;
+}
+.g3{
+    background-color: #d35400;
+}
+
+.g4{
+    background-color: #f39c12;
+}
+
+.g5{
+    background-color: #27ae60;
+}
+
+.g6{
+    background-color: #3498db;
+}
 @keyframes slidein {
     0% {
         width: 0px;
