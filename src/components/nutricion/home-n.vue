@@ -74,7 +74,7 @@ export default {
     height: 150px;
 }
 
-.pic1:hover, .pic2:hover, .pic3:hover, .pic4:hover{   
+.pic1:hover, .pic2:hover, .pic3:hover, .pic4:hover{
     animation: up 1s 1;
     opacity: 0.6;
 }
@@ -89,14 +89,14 @@ export default {
     100%{
         bottom: 0px;
     }
-} 
+}
 
 .h-b{
     position: relative;
     float: left;
     bottom: 40px;
     height: 50px;
-    width: 100%;
+    width: 90%;
     background-color: #ff4d4d;
     z-index: 0;
 }
@@ -104,7 +104,7 @@ export default {
 .sm{
     position: relative;
     display: inline-block;
-    width: 25%;
+    width: 20%;
     height: auto;
     z-index: 100;
 }
@@ -114,6 +114,18 @@ export default {
     color: #fff;
     font-size: 30px;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 864px) {
+  .h-b{
+    display: none;
+  }
+  .bg-g{
+    margin-top: 20px;
+  }
+  .sm{
+    display: flex;
+  }
 }
 
 .modal-content{

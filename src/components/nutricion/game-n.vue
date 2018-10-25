@@ -1,7 +1,5 @@
 <template>
-<main>
-<div class="container">
-  <div class="row controls">
+  <div class="controls">
       <!-- primer juego -->
       <div class="col-lg-4 col-md-4 col-sm-2 games">
           <b-card title="Juega Adivina"
@@ -15,8 +13,8 @@
             <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
             </p>
-            </b-card>  
-      </div>  
+            </b-card>
+      </div>
       <!-- segundo juego -->
        <div class="col-lg-4 col-md-4 col-sm-2 games">
           <b-card title="Juega Piramide"
@@ -30,7 +28,7 @@
               <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </p>
-            </b-card>          
+            </b-card>
        </div>
       <!-- tercer juego -->
        <div class="col-lg-4 col-md-4 col-sm-2 games">
@@ -48,10 +46,6 @@
             </b-card>
        </div>
     </div>
-</div>
-
-<router-view />
-</main>
 </template>
 <script>
 
@@ -78,11 +72,6 @@ export default {
 <style>
 .controls{
   margin-top: 80px;
-  position: relative;
-  right: 200px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 .games{
@@ -98,4 +87,3 @@ export default {
   color: white;
 }
 </style>
-
