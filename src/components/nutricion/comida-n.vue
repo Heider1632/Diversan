@@ -1,12 +1,12 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12 main">
+            <div class="col-lg-9 col-md-9 col-sm-11 main">
                 <div class="box-piramide">
-                  <img src="../../assets/piramide/piramide.svg" class="img-fluid" alt="Responsive image">
+                  <img src="../../assets/piramide/piramide.svg" class="piramid-img img-fluid" alt="Responsive image">
                 </div>
             </div>
-            <div class="col-lg-2 col-md-8 col-sm-12">
+            <div class="col-lg-2 col-md-8 col-sm-11">
                 <div class="elements-group">
                     <div class="g1" @click="showInf1()">
                         <h3>Grupo 6</h3>
@@ -127,11 +127,12 @@ export default {
     height: 100%;
     width: 100%;
 }
+
 .elements-group{
     margin-top: 150px;
 }
 .g1, .g2, .g3, .g4, .g5, .g6{
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -158,10 +159,10 @@ h3{
     background-color: #d35400;
 }
 .g4{
-    background-color: #f39c12;
+    background-color: #27ae60;
 }
 .g5{
-    background-color: #27ae60;
+    background-color: #f39c12;
 }
 .g6{
     background-color: #3498db;

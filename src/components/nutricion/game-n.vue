@@ -1,89 +1,86 @@
 <template>
-  <div class="controls">
-      <!-- primer juego -->
-      <div class="col-lg-4 col-md-4 col-sm-2 games">
-          <b-card title="Juega Adivina"
-            @click="goAdivina()"
-            :img-src="require('@/assets/games/pregunta.png')"
-            img-alt="Adivina"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2">
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            </b-card>
+  <div class="columns is-3 controls">
+    <!-- primer juego -->
+    <div class="colum games">
+      <div class="card target" style="width: 18rem;" @click="goAdivina()">
+        <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
+        <div class="card-body">
+          <h5 class="card-title" align="center">Sabias qué...</h5>
+        </div>
       </div>
-      <!-- segundo juego -->
-       <div class="col-lg-4 col-md-4 col-sm-2 games">
-          <b-card title="Juega Piramide"
-            @click="goPiramide()"
-            :img-src="require('@/assets/icons/piramide-ico.svg')"
-            img-alt="Piramide"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </p>
-            </b-card>
-       </div>
-      <!-- tercer juego -->
-       <div class="col-lg-4 col-md-4 col-sm-2 games">
-          <b-card title="Juega Concentrate"
-            @click="goConcentrate()"
-            :img-src="require('@/assets/games/cerebro.png')"
-            img-alt="Cerebro"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2">
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            </b-card>
-       </div>
     </div>
+    <!-- segundo juego -->
+    <div class="colum games">
+      <div class="card target" style="width: 18rem;" @click="goPiramide()">
+        <img class="card-img-top topic-game" src="../../assets/icons/piramide-ico.svg" alt="Piramide">
+        <div class="card-body">
+          <h5 class="card-title" align="center">Juega piramide</h5>
+        </div>
+      </div>
+    </div>
+    <!-- tercer juego -->
+    <div class="colum games">
+      <div class="card target" style="width: 18rem;" @click="goConcentrate()">
+        <img class="card-img-top topic-game" src="../../assets/games/cerebro.png" img-alt="Cerebro">
+        <div class="card-body">
+          <h5 class="card-title" align="center">Juega Concentrate</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-
+import bulma from 'bulma'
 export default {
   name: 'game',
-  data(){
-    return{
-    }
+  data() {
+    return {}
   },
   methods: {
-    goConcentrate(){
-      this.$router.push({ path: '/juegoConcentrate' })
+    goConcentrate() {
+      this.$router.push({
+        path: '/juegoConcentrate'
+      })
     },
-    goPiramide(){
-      this.$router.push({ path: '/juegoPiramide' })
+    goPiramide() {
+      this.$router.push({
+        path: '/juegoPiramide'
+      })
     },
-    goAdivina(){
-      this.$router.push({ path: '/juegoAdivina' })
+    goAdivina() {
+      this.$router.push({
+        path: '/juegoAdivina'
+      })
     }
   }
 
 }
 </script>
 <style>
-.controls{
-  margin-top: 80px;
+.controls {
+  margin-top: 100px;
 }
-
 .games{
-  display: inline-block;
+  margin-left: 50px;
+}
+.topic-game{
+  width: 100px;
+  height: 100px;
+}
+.target{
+  margin-left: 100px;
 }
 
-.card:hover{
+.target:hover {
   transition: 500ms all ease-out;
-  background-color:  #4d94ff;
+  background: rgba(255, 0, 0, 0.5);
 }
 
-.card:hover p, .card:hover a{
-  color: white;
+@media screen and (max-width: 1300px){
+  .target{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 }
 </style>

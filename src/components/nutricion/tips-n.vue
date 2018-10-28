@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row down">
-            <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
             <h3 align="center">Tips</h3>
             <div class="bg-l">
                 <div role="tablist">
@@ -63,7 +63,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="img3"></div>
                                     </div>
-                                </div>                                
+                                </div>
                             </b-card-body>
                         </b-collapse>
                     </b-card>
@@ -84,7 +84,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="img4"></div>
                                     </div>
-                                </div>                               
+                                </div>
                             </b-card-body>
                         </b-collapse>
                     </b-card>
@@ -105,7 +105,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="img5"></div>
                                     </div>
-                                </div>                                    
+                                </div>
                             </b-card-body>
                         </b-collapse>
                     </b-card>
@@ -126,7 +126,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="img6"></div>
                                     </div>
-                                </div>    
+                                </div>
                             </b-card-body>
                         </b-collapse>
                     </b-card>
@@ -152,14 +152,14 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="img7"></div>
                                     </div>
-                                </div>  
+                                </div>
                             </b-card-body>
                         </b-collapse>
                     </b-card>
                 </div>
             </div>
             </div>
-            <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="col-lg-5 col-md-5 col-sm-12">
                 <aside class="aside">
                     <h3 align="center">Dieta: </h3>
                     <p class="lead text-justify">
@@ -183,14 +183,12 @@
 .aside {
   background-color: blanchedalmond;
   border-radius: 25px;
-  padding: 50px;
+  padding: 30px;
   width: 100%;
 }
 
 .card{
-    margin-left: 100px;
-    margin-right: 100px;
-    width: 700px;
+    width: 500px;
 }
 
 p{
@@ -204,7 +202,6 @@ p{
   background-position: center;
   background-size: cover;
 }
-
 .img2 {
   width: 100px;
   height: 100px;
@@ -212,7 +209,6 @@ p{
   background-position: center;
   background-size: cover;
 }
-
 .img3 {
   width: 100px;
   height: 100px;

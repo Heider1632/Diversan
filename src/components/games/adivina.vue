@@ -1,141 +1,68 @@
 <template>
-    <div class="container">
-        <div class="row bg">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <b-card class="box1 q-1" bg-variant="light">
-                    <b-form-group horizontal
-                        label="¿Cuántos grupos alimenticios conforman la piramide alimenticia?"
-                        label-size="lg"
-                        label-class="font-weight-bold pt-0"
-                        class="mb-0 title">
+  <main class="wrapper">
+          <!-- primera pregunta -->
+            <!-- card -->
+            <div class="q-1">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <h5>¿Cuántos grupos alimenticios conforman la piramide alimenticia?</h5>
+                    </div>
                     <!-- options -->
-                    <b-form-group horizontal @click.native="op1()"
-                        label="A: 3"
-                        label-class="text-sm-right"
-                        label-for="op1">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op2()"
-                        label="B: 2"
-                        label-class="text-sm-right"
-                        label-for="op2">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op3()"
-                        label="C: 5"
-                        label-class="text-sm-right"
-                        label-for="op3">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op4()"
-                        label="D: 6"
-                        label-class="text-sm-right"
-                        label-for="op4">
-                    </b-form-group>
-                </b-form-group>
-            </b-card>
-            <br />
-            <b-card class="box1 q-3" bg-variant="light">
-                    <b-form-group horizontal
-                        label="¿Cuál es el primer nivel en la piramide alimenticia?"
-                        label-size="lg"
-                        label-class="font-weight-bold pt-0"
-                        class="mb-0 title">
-                    <!-- option -->
-                    <b-form-group horizontal @click.native="op5()"
-                        label="A: Carnes"
-                        label-class="text-sm-right"
-                        label-for="nestedStreet">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op6()"
-                        label="B: Frutas"
-                        label-class="text-sm-right"
-                        label-for="nestedCity">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op7()"
-                        label="C: Agua"
-                        label-class="text-sm-right"
-                        label-for="nestedState">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op8()"
-                        label="D: Dulces"
-                        label-class="text-sm-right"
-                        label-for="nestedCountry">
-                    </b-form-group>
-                </b-form-group>
-            </b-card>
-            </div>
-            <!-- box 2-->
-            <div class="col-lg-6 col-md-6 col-sm-6">
-            <b-card class="box2 q-2" bg-variant="light">
-                    <b-form-group horizontal
-                        :label-cols="6"
-                        label="¿Cuál son los nombres de los grupos alimenticios de color verde?"
-                        label-size="lg"
-                        label-class="font-weight-bold pt-0"
-                        class="mb-0 title">
-                    <b-form-group horizontal @click.native="op9()" 
-                        :label-cols="6"
-                        label="A: Frutas"
-                        label-class="text-lg-right"
-                        label-for="nestedStreet">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op10()" 
-                        :label-cols="6"
-                        label="B: Carnes"
-                        label-class="text-lg-right"
-                        label-for="nestedCity">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op11()"
-                        :label-cols="6"
-                        label="C: Vegetales"
-                        label-class="text-lg-right"
-                        label-for="nestedState">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op12()"
-                        :label-cols="6"
-                        label="D: Cereales"
-                        label-class="text-sm-right"
-                        label-for="nestedCountry">
-                    </b-form-group>
-                </b-form-group>
-            </b-card>
-            <br />
-            <b-card class="box2 q-4" bg-variant="light">
-                    <b-form-group horizontal
-                        :label-cols="6"
-                        breakpoint="lg"
-                        label="¿Por qué es importante alimentarse bien?"
-                        label-size="lg"
-                        label-class="font-weight-bold"
-                        class="mb-0">
-                    <b-form-group horizontal @click.native="op13()"
-                        :label-cols="10"
-                        label="A: Porque creces sano y fuerte"
-                        label-class="text-lg-right"
-                        label-for="nestedStreet">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op14()"
-                        :label-cols="10"
-                        label="B: Porque puedes jugar sin ningún problema"
-                        label-class="text-lg-right"
-                        label-for="nestedCity">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op15()"
-                        :label-cols="10"
-                        label="C: Porque te evita enfermedades"
-                        label-class="text-lg-right"
-                        label-for="nestedState">
-                    </b-form-group>
-                    <b-form-group horizontal @click.native="op16()"
-                        :label-cols="10"
-                        label="D: Porque duermes bien"
-                        label-class="text-lg-right"
-                        label-for="nestedCountry">
-                    </b-form-group>
-                </b-form-group>
-            </b-card>
-            </div>
-        </div>
-    </div>
-    
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <ul class="list-group">
+                        <li class="list-group-item" @click="op1()">A: 3</li>
+                        <li class="list-group-item" @click="op2()">B: 2</li>
+                        <li class="list-group-item" @click="op3()">C: 5</li>
+                        <li class="list-group-item" @click="op4()">D: 6</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- segunda pregunta -->
+              <!-- card -->
+            <div class="q-2">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <h5>¿Cuál es el primer nivel en la piramide alimenticia?</h5>
+                    </div>
+                    <!-- options -->
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <ul class="list-group">
+                        <li class="list-group-item" @click="op5()">A: Carnes</li>
+                        <li class="list-group-item" @click="op6()">B: Frutas</li>
+                        <li class="list-group-item" @click="op7()">C: Agua</li>
+                        <li class="list-group-item" @click="op8()">D: Dulces</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+              <!-- tercera pregunta -->
+              <!-- card -->
+            <div class="q-3">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-4">
+                        <h5>¿Por qué es importante alimentarse bien?</h5>
+                      </div>
+                      <!-- options -->
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul class="list-group">
+                          <li class="list-group-item" @click="op13()">A: Porque creces sano y fuerte</li>
+                          <li class="list-group-item" @click="op14()">B: Porque puedes jugar sin ningún problema</li>
+                          <li class="list-group-item" @click="op15()">C: Porque te evita enfermedades</li>
+                          <li class="list-group-item" @click="op16()">D: Porque duermes bien</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- end card -->
+  </main>
 </template>
 <script>
 import swal from 'sweetalert2'
@@ -147,7 +74,7 @@ export default {
         }
     },
     methods:{
-        op1: function(){
+        op1(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -156,7 +83,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op2: function(){
+        op2(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -165,7 +92,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op3: function(){
+        op3(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -175,7 +102,7 @@ export default {
             })
 
         },
-        op4: function(){
+        op4(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -190,7 +117,7 @@ export default {
             })
         },
         //q2//
-        op5: function(){
+        op5(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -199,7 +126,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op6: function(){
+        op6(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -208,7 +135,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op7: function(){
+        op7(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -222,7 +149,7 @@ export default {
                     `
             })
         },
-        op8: function(){
+        op8(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -232,7 +159,7 @@ export default {
             })
         },
         //q3//
-        op9: function(){
+        op9(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -246,7 +173,7 @@ export default {
                     `
             })
         },
-        op10: function(){
+        op10(){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -255,7 +182,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op11: function(){
+        op11(){
              swal({
                 type: 'error',
                 title: 'Oops...',
@@ -264,7 +191,7 @@ export default {
                 customClass: 'animated tada'
             })
         },
-        op12: function(){
+        op12(){
              swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -279,7 +206,7 @@ export default {
             })
         },
         //q4//
-        op13: function(){
+        op13(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -293,7 +220,7 @@ export default {
                     `
             })
         },
-        op14: function(){
+        op14(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -307,7 +234,7 @@ export default {
                     `
             })
         },
-        op15: function(){
+        op15(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -321,7 +248,7 @@ export default {
                     `
             })
         },
-        op16: function(){
+        op16(){
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -339,22 +266,43 @@ export default {
 }
 </script>
 <style>
-.box1{
-    margin-left: 0px;
+.wrapper{
+  width: 1000px;
+  margin-top: 100px;
+  margin-left: 5px;
 }
 
-.box2{
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 550px;
+.q-1{
+  background-color: #fff;
+  margin-left: 0px;
+  margin-right: 0px;
+  float: left;
+  max-width: 500px;
 }
 
-.text-lg-right{
-    width: 120px;
+.q-2{
+  background-color: #fff;
+  margin-left: 0px;
+  margin-right: 0px;
+  float: left;
+  max-width: 400px;
 }
-label:hover{
+
+.q-3{
+  background-color: #fff;
+  clear:both;
+  width: 90%;
+}
+
+.list-group-item:hover{
     background-color: #0033cc;
-    color: #fff; 
+    color: #fff;
+}
+
+@media screen and (max-width: 1130px) {
+  .q1, .q2{
+    float: none;
+    width: 90%;
+  }
 }
 </style>
-

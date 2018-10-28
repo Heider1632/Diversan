@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <meta Content-Type="text/html">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-11 col-md-11 col-sm-8">
@@ -9,42 +10,34 @@
           <navbar />
         </div>
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
 import navbar from './components/navbar'
+import axios from 'axios'
 export default {
   name: 'app',
   components: {
-    navbar
+    navbar,
   },
- mounted () {
-    //  [App.vue specific] When App.vue is finish loading finish the progress bar
-    this.$Progress.finish()
+  data(){
+    return{
+      fondo: 'assets/audio/fondo.mp3'
+    }
   },
-  created () {
-    //  [App.vue specific] When App.vue is first loaded start the progress bar
-    this.$Progress.start()
-    //  hook the progress bar to start before we move router-view
-    this.$router.beforeEach((to, from, next) => {
-      //  does the page we want to go to have a meta.progress object
-      if (to.meta.progress !== undefined) {
-        let meta = to.meta.progress
-        // parse meta tags
-        this.$Progress.parseMeta(meta)
-      }
-      //  start the progress bar
-      this.$Progress.start()
-      //  continue to next page
-      next()
-    })
-    //  hook the progress bar to finish after we've finished moving router-view
-    this.$router.afterEach((to, from) => {
-      //  finish the progress bar
-      this.$Progress.finish()
-    })
+  created(){
+    axios.request('/path', {
+        headers: {
+          'Content-Type': 'text/html'
+        }
+      }).then(success => console.log('exito'))
+        .catch(error => console.log(error))
+
+    var audio = new Audio(this.fondo);
+    audio.play();
   }
 }
 </script>
@@ -69,6 +62,7 @@ body {
       width: 100%;
       height: 100vh;
       background: url(../src/assets/Fondo.svg);
+
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;

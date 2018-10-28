@@ -1,48 +1,30 @@
 <template>
     <div class="container-fluid">
         <div class="row bg">
-        <!-- juego piramide -->
-        <div class="col-lg-6 col-md-8 col-sm-12">
-          <div class="piramid">
-            <div :id="level1.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level2.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level3.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level4.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level5.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level6.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
-            <div :id="level7.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+          <!-- juego piramide -->
+          <div class="piramid-container col-lg-6 col-md-6 col-sm-6">
+            <div class="piramid">
+              <div :id="level1.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level2.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level3.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level4.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level5.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level6.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+              <div :id="level7.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="column is-4 boxes-container" v-for="item in items">
+              <div v-bind:class="[classOn]" :id="item" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
+            </div>
           </div>
         </div>
-      <!-- Cards player -->
-      <div class="col-lg-5 col-md-12 col-sm-12">
-        <div class="box">
-        <div v-bind:class="[classOn]" :id="i1" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i2" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i3" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i4" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i5" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i6" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i7" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i8" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i9" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i10" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i11" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i12" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i13" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i14" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i15" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i16" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i17" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i18" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i19" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        <div v-bind:class="[classOn]" :id="i20" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
-        </div>
       </div>
-    </div>
-    </div>
 </template>
 <script>
 import swal from 'sweetalert2';
+import bulma from 'bulma'
 export default {
      data() {
         return {
@@ -50,26 +32,23 @@ export default {
           dragged: undefined,
           classOn: 'fill',
           inicio: 'active',
-          i1: 'i1',
-          i2: 'i2',
-          i3: 'i3',
-          i4: 'i4',
-          i5: 'i5',
-          i6: 'i6',
-          i7: 'i7',
-          i8: 'i8',
-          i9: 'i9',
-          i10: 'i10',
-          i11: 'i11',
-          i12: 'i12',
-          i13: 'i13',
-          i14: 'i14',
-          i15: 'i15',
-          i16: 'i16',
-          i17: 'i17',
-          i18: 'i18',
-          i19: 'i19',
-          i20: 'i20',
+          items: {
+            i1: 'i1',
+            i2: 'i2',
+            i3: 'i3',
+            i4: 'i4',
+            i5: 'i5',
+            i6: 'i6',
+            i7: 'i7',
+            i8: 'i8',
+            i9: 'i9',
+            i10: 'i10',
+            i11: 'i11',
+            i12: 'i12',
+            i13: 'i13',
+            i14: 'i14',
+            i15: 'i15'
+          },
           level1:{
             id: 'v1',
             cad1: []
@@ -97,7 +76,7 @@ export default {
           level7: {
             id: 'v7',
             cad7: []
-          } 
+          }
       }
     },
     methods:{
@@ -140,7 +119,7 @@ export default {
             }else if(this.level1.cad1[i] == 'i9'){
                //añade el hijo a la piramide
               event.target.appendChild(this.dragged);
-              
+
               swal({
                 position: 'top-end',
                 type: 'success',
@@ -152,7 +131,7 @@ export default {
             }else if(this.level1.cad1[i] == 'i10'){
                //añade el hijo a la piramide
               event.target.appendChild(this.dragged);
-              
+
               swal({
                 position: 'top-end',
                 type: 'success',
@@ -332,7 +311,7 @@ export default {
           for(var i = 0; i < this.level6.cad6.length; i+=1){
             if(this.level6.cad6[i] == 'i20'){
               //añade el hijo a la piramide
-              event.target.appendChild(this.dragged);              
+              event.target.appendChild(this.dragged);
 
               swal({
                 position: 'top-end',
@@ -343,7 +322,7 @@ export default {
               });
             }else if(this.level6.cad6[i] == 'i12'){
               //añade el hijo a la piramide
-              event.target.appendChild(this.dragged);              
+              event.target.appendChild(this.dragged);
 
               swal({
                 position: 'top-end',
@@ -367,7 +346,7 @@ export default {
             }else if(this.level6.cad6[i] == 'i16'){
               //añade el hijo a la piramide
               event.target.appendChild(this.dragged);
-              
+
               swal({
                 position: 'top-end',
                 type: 'success',
@@ -426,14 +405,40 @@ export default {
 </script>
 <style>
 .bg{
-  margin-top: 100px;
+  margin-top: 60px;
 }
+
+.piramid-container{
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes-container{
+  height: 70px;
+  width: 80%;
+  float: left;
+  position: relative;
+  left: 50px;
+}
+
+
 .fill {
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   cursor: pointer;
   margin: 10px;
+}
+
+.piramid{
+  position: relative;
+  left: 300px;
+
 }
 
 #disable{
@@ -446,15 +451,6 @@ export default {
   width: 40px;
 }
 
-.piramid{
-  position: relative;
-  left: 250px;
-}
-
-.box{
-  border: 2px solid gray;
-  background-color: #1ad1ff;
-}
 
 /* elementos de la piramide */
 
@@ -542,170 +538,123 @@ export default {
 /* elementos para dropear */
 
 #i1{
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/agua.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
 #i2{
-  width: 100px;
-  height: 100px;
-  background: url("../../assets/icons/hamburguesa.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-#i3{
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/jamon.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
-#i4{
-  width: 100px;
-  height: 100px;
+#i3{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/filete.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
-#i5{
-  width: 100px;
-  height: 100px;
-  background: url("../../assets/icons/fresas.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-#i6{
-  width: 100px;
-  height: 100px;
+#i4{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/cereal.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i7{
-  width: 100px;
-  height: 100px;
+#i5{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/avena.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i8{
-  width: 100px;
-  height: 100px;
-  background: url("../../assets/icons/tocino.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#i9{
-  width: 100px;
-  height: 100px;
-  background: url("../../assets/icons/emparedado.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#i10{
-  width: 100px;
-  height: 100px;
+#i6{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/pizza.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i11{
-  width: 100px;
-  height: 100px;
+#i7{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/pastelito.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i12{
-  width: 100px;
-  height: 100px;
+#i8{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/pan.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i13{
-  width: 100px;
-  height: 100px;
-  background: url("../../assets/icons/papas-fritas.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#i14{
-  width: 100px;
-  height: 100px;
+#i9{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/pan.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i15{
-  width: 100px;
-  height: 100px;
+#i10{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/pollo.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i16{
-  width: 100px;
-  height: 100px;
+#i11{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/queso.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i17{
-  width: 100px;
-  height: 100px;
+#i12{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/verduras.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i18{
-  width: 100px;
-  height: 100px;
+#i13{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/naranja.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i19{
-  width: 100px;
-  height: 100px;
+#i14{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/manzana.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#i20{
-  width: 100px;
-  height: 100px;
+#i15{
+  width: 75px;
+  height: 75px;
   background: url("../../assets/icons/leche.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 </style>
-
-

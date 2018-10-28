@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="row bg-g">
-                <div class="col-lg-12 col-md-12 col-sm-8">
+                <div class="col-lg-11 col-md-11 col-sm-8">
                     <div class="sm animated lightSpeedIn delay-500ms">
                         <img src="../../assets/icons/handshake.svg" class="pic1"  @click="showModal"/>
                         <a class="alert-link" href="#" @click="showModal">Aprendamos</a>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="sm animated lightSpeedIn delay-1500ms" >
                         <img src="../../assets/icons/apple.svg" class="pic3" @click="goAlimentacion()"/>
-                        <router-link class="alert-link" to="/tipsnutricion">Alimentación sana</router-link>
+                        <router-link class="alert-link" to="/tipsnutricion">Alimentación</router-link>
                     </div>
                     <div class="sm animated lightSpeedIn delay-2000ms">
                         <img src="../../assets/icons/windmill.svg" class="pic4" @click="goJuega()"/>
@@ -70,7 +70,7 @@ export default {
 .pic1, .pic2, .pic3, .pic4{
     position: relative;
     bottom: 30px;
-    width: 300px;
+    width: 200px;
     height: 150px;
 }
 
@@ -96,7 +96,7 @@ export default {
     float: left;
     bottom: 40px;
     height: 50px;
-    width: 90%;
+    width: 93%;
     background-color: #ff4d4d;
     z-index: 0;
 }
@@ -104,7 +104,7 @@ export default {
 .sm{
     position: relative;
     display: inline-block;
-    width: 20%;
+    width: 25%;
     height: auto;
     z-index: 100;
 }
