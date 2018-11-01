@@ -5,6 +5,7 @@
     <i></i>
     <i></i>
     <i></i>
+    <i></i>
   </label>
 
   <div class="nav-wrapper">
@@ -23,15 +24,21 @@
         </a>
       </li>
       <li>
-        <a href="#">
-          <img src="../assets/icons/español.png" class="es" v-on:click="cambiarNormal()" />
+        <a @click="logout">
+          <img src="../assets/icons/exit.svg" class="home" />
           <h4 class="a">{{ item3 }}</h4>
         </a>
       </li>
       <li>
         <a href="#">
-          <img src="../assets/icons/usa.png" class="es" v-on:click="cambiarIngles()" />
+          <img src="../assets/icons/español.png" class="es" v-on:click="cambiarNormal()" />
           <h4 class="a">{{ item4 }}</h4>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="../assets/icons/usa.png" class="es" v-on:click="cambiarIngles()" />
+          <h4 class="a">{{ item5 }}</h4>
         </a>
       </li>
     </ul>
@@ -44,8 +51,9 @@ export default {
     return {
       item1: 'INICIO',
       item2: 'ATRAS',
-      item3: 'ESPAÑOL',
-      item4: 'INGLÉS',
+      item3: 'SALIR',
+      item4: 'ESPAÑOL',
+      item5: 'INGLÉS',
       ingles: undefined,
     }
   },
@@ -74,6 +82,10 @@ export default {
         this.item3 = 'SPAIN';
         this.item4 = 'ENGLISH';
       }
+    },
+    logout() {
+        this.$cookies.remove('user')
+        this.$router.push('/')
     }
   }
 }

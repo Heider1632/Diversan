@@ -104,8 +104,8 @@ export default {
   background: #00bcd4;
 }
 
-.card:hover h5,
-.card:hover p {
+.target:hover h5,
+.target:hover p {
   color: white;
 }
 

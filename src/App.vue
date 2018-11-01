@@ -7,7 +7,7 @@
         <router-view />
       </div>
     </div>
-    <span :id="audio"></span>
+    <!-- <audio :src="require('./assets/audio/fondo.mp3')" autoplay></audio> -->
   </div>
 </div>
 </template>
@@ -19,8 +19,7 @@ export default {
   name: 'app',
   data() {
     return {
-      fondo: 'assets/audio/fondo.mp3',
-      audio: audio
+      audio: 'audio'
     }
   },
   created() {
@@ -41,9 +40,7 @@ export default {
       }
     })
 
-    audio = new Audio(this.fondo);
-
-    var playPromise = this.audio.play();
+    /*var playPromise = document.querySelector('audio').play();
 
     // In browsers that don’t yet support this functionality,
     // playPromise won’t be defined.
@@ -54,7 +51,7 @@ export default {
         // Automatic playback failed.
         // Show a UI element to let the user manually start playback.
       });
-    }
+    }*/
   }
 }
 </script>

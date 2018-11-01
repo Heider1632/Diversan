@@ -1,6 +1,6 @@
 <template>
   <div class="form-login">
-    <img class="Resposive-img centrador" src="../assets/logo.svg" alt="Logo" />
+    <img class="Resposive-img centrador" src="../assets/diversan.svg" alt="Logo" />
 
     <div class="input-group form-sign">
       <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="username">
@@ -20,6 +20,19 @@ export default {
       username: undefined,
     }
   },
+  created(){
+    if(this.$cookies.isKey('user')){
+      var username =  this.$cookies.isKey('user').name;
+
+      this.$store.dispatch('AUTH_REQUEST_ASYNC', { username })
+          .then( ()=> {
+            //se redirecciona al home
+            this.$router.push('/inicionutricion');
+          }).catch(err => {
+            console.log(err);
+          })
+    }
+  },
   methods: {
     login: function() {
           const { username } = this
@@ -30,12 +43,6 @@ export default {
           }).catch(err => {
             console.log(err);
           })
-    },
-    logout: function() {
-      this.$store.dispatch('AUTH_LOGOUT')
-      .then(() => {
-        this.$router.push('/')
-      })
     }
   }
 }
