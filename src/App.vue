@@ -7,7 +7,7 @@
         <router-view />
       </div>
     </div>
-    <!-- <audio :src="require('./assets/audio/fondo.mp3')" autoplay></audio> -->
+    <audio :src="require('./assets/audio/fondo.mp3')" autoplay></audio> 
   </div>
 </div>
 </template>
