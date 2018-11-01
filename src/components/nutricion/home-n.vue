@@ -1,8 +1,8 @@
 <template>
     <main>
         <div class="container">
-            <div class="row bg-g">
-                <div class="col-lg-11 col-md-11 col-sm-8">
+            <div class="row">
+                <div class="col-lg-11 col-md-11 col-sm-8 bg-g">
                     <div class="sm animated lightSpeedIn delay-500ms">
                         <img src="../../assets/icons/handshake.svg" class="pic1"  @click="showModal"/>
                         <a class="alert-link" href="#" @click="showModal">Aprendamos</a>
@@ -21,6 +21,9 @@
                     </div>
                 <div class="h-b"></div>
                 </div>
+                <div class="col-lg-1 col-md-1 col-sm1">
+                  <navbar />
+                </div>
             </div>
 
             <!-- modal concepto -->
@@ -36,8 +39,13 @@
     </main>
 </template>
 <script>
+import navbar from '../navbar'
 export default {
     name: 'homenutricion',
+    components: { navbar},
+    beforeCreate: function () {
+
+    },
     methods: {
     showModal () {
       this.$refs.myModalRef.show()

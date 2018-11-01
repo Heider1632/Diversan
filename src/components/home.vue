@@ -1,41 +1,68 @@
 <template>
-<main>
-    <div class="container-fluid wrapper">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="centrador" v-b-tooltip.hover title="Click aquí para continuar" @click="goInicio()" ></div>
-            </div>
-        </div>
+  <div class="form-login">
+    <img class="Resposive-img centrador" src="../assets/logo.svg" alt="Logo" />
+
+    <div class="input-group form-sign">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="username">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" @click="login">Iniciar</button>
+      </div>
     </div>
-</main>
+
+  </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
-    name: 'home',
-    methods: {
-        goInicio(){
-            this.$router.push({
-                path: 'inicionutricion'
-            })
-        }
+  name: 'home',
+  data(){
+    return{
+      username: undefined,
     }
+  },
+  methods: {
+    login: function() {
+          const { username } = this
+          this.$store.dispatch('AUTH_REQUEST_ASYNC', { username })
+          .then( ()=> {
+            //se redirecciona al home
+            this.$router.push('/inicionutricion');
+          }).catch(err => {
+            console.log(err);
+          })
+    },
+    logout: function() {
+      this.$store.dispatch('AUTH_LOGOUT')
+      .then(() => {
+        this.$router.push('/')
+      })
+    }
+  }
 }
 </script>
 
 
 <style scoped>
-.wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.centrador{
-    margin-top: 50%;
-    width: 300px;
-    height: 300px;
-    background: url("../assets/logo.svg");
-    background-position: center;
-    background-repeat: no-repeat;
+.form-login{
+  margin-top: 100px;
+  display: block;
 }
 
+.centrador {
+  height: 300px;
+  width: 300px;
+  margin: 10px auto;
+  display:block;
+}
+
+.form-sign{
+  margin: 10px auto;
+  width: 40%;
+}
+
+@media screen and (max-width: 300px){
+  .form.sign{
+    width: 60%;
+  }
+}
 </style>

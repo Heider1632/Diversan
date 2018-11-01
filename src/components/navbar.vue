@@ -80,12 +80,11 @@ export default {
 </script>
 <style>
 nav {
-  margin-top: 60px;
   padding: 6px;
 }
 
 nav ul {
-  float: right;
+  float: left;
 }
 
 nav ul li {

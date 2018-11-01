@@ -1,14 +1,16 @@
 <template>
   <div id="root">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 col-sm-10">
       <div class="container level">
           <div v-show="userScore==8" class="centered success-message">Success!!!</div>
           <div class="level-item">
               <div class="columns is-gapless is-multiline">
-                  <div class="column is-2">
+                  <div class="box-score column is-2">
                       <h1>User Score: <span v-text="userScore" ></span></h1>
-                      <div class="button is-warning" @click="restartGame">Restart Game</div>
+                      <div class="button is-warning" align="center" @click="restartGame">Restart Game</div>
                   </div>
-                  <div class="column is-8">
+                  <div class="box column is-8">
                       <div class="columns is-gapless is-multiline">
                           <div v-for="(value, card) in showCards" class="column is-3 playing-card" @click="flipCard" :id="card">
                               <img class="card-img" :src="require('../../assets/icons/' + value + '.svg')"></img>
@@ -20,8 +22,15 @@
       </div>
       <div class="button is-primary below-game" v-show="twoCards"  @click="coverCards">Cover cards</div>
   </div>
+
+  <div class="fixed-navbar-c col-lg-2 col-md-2 col-sm-2">
+    <navbar />
+  </div>
+</div>
+</div>
 </template>
 <script>
+import navbar from '../navbar'
 import bulma from 'bulma'
 // Load the full build.
 var _ = require('lodash');
@@ -29,6 +38,8 @@ var _ = require('lodash');
 var cardsBack = '2753';
 
 export default{
+  name: 'concentrate',
+  components:{ navbar },
   data: function(){
     return{
         cards: [
@@ -67,6 +78,10 @@ export default{
     },
     created(){
       this.shuffleCards();
+
+      if(this.userScore == 8){
+        this.$store.dispatch('incrementAsync');
+      }
     },
     methods:{
       shuffleCards: function() {
@@ -161,6 +176,16 @@ img.card-img {
      left: 50%;
      /* bring your own prefixes */
      transform: translate(-50%, -50%);
+ }
+
+ .box{
+   background: white;
+   margin: 10px;
+ }
+
+ .box-score{
+   background: #4fd6;
+   margin-lef: 10px;
  }
 
 .success-message {

@@ -8,6 +8,7 @@ import gameNutricion from '../components/nutricion/game-n'
 import piramide from '../components/games/piramide'
 import adivina from '../components/games/adivina'
 import concentrate from '../components/games/concentrate'
+import { store } from '../store/store' // your vuex store
 
 Vue.use(VueRouter);
 
@@ -16,96 +17,63 @@ let router = new VueRouter({
 	routes: [
 		{
 			path : '/',
-			name: 'home', 
+			name: 'home',
 			component: home,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
+      meta: {
+        resquestAuth: true
+      }
 		},
 		{
-			path: '/inicionutricion', 
+			path: '/inicionutricion',
 			name: 'inicionutricion',
 			component: homeNutricion,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
 		},
 		{
 			path: '/comidanutricion',
 			name: 'comidanutricion',
 			component: comidaNutricion,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
 		},
 		{
-			path: '/tipsnutricion', 
+			path: '/tipsnutricion',
 			name: 'tipsnutricion',
-			component: tipsNutricion,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
+			component: tipsNutricion
 		},
 		{
-			path: '/juegonutricion', 
+			path: '/juegonutricion',
 			name: 'juegonutricion',
-			component: gameNutricion,
-			meta: {
-				progress: {
-				  func: [
-					{call: 'color', modifier: 'temp', argument: '#ffb000'},
-					{call: 'fail', modifier: 'temp', argument: '#6e0000'},
-					{call: 'location', modifier: 'temp', argument: 'top'},
-					{call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-				  ]
-				}
-			  }
+			component: gameNutricion
 		},
 		{
-			path: '/juegoPiramide', 
+			path: '/juegoPiramide',
 			name: 'juegoPiramide',
-			component: piramide,
+			component: piramide
 		},
 		{
-			path: '/juegoAdivina', 
+			path: '/juegoAdivina',
 			name: 'juegoAdivina',
-			component: adivina,
+			component: adivina
 		},
 		{
-			path: '/juegoConcentrate', 
+			path: '/juegoConcentrate',
 			name: 'juegoConcentrate',
 			component: concentrate,
 		}
-		
+
 	]
 });
+
+// Nav Guard
+/*router.beforeEach((to, from, next) => {
+  // Check for requiresAuth guard
+	if (to.matched.some(record => record.meta.requiresAuth)) {
+    // Check if NO logged user
+    if (!store.getters.isAuthenticated) {
+      next()
+      return
+    }else{
+      next('/')
+    }
+  }
+});*/
 
 export default router;

@@ -1,5 +1,8 @@
 <template>
-  <main class="wrapper">
+<div class="row">
+<div class="col-lg-10 col-md-10 col-sm-10">
+  <div class="wrapper">
+
           <!-- primera pregunta -->
             <!-- card -->
             <div class="q-1">
@@ -62,12 +65,20 @@
                   </div>
                 </div>
               <!-- end card -->
-  </main>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2">
+                <navbar />
+          </div>
+      </div>
 </template>
 <script>
 import swal from 'sweetalert2'
+import navbar from '../navbar'
 export default {
     name: 'adivina',
+    components: { navbar },
     data(){
         return{
 
@@ -103,6 +114,8 @@ export default {
 
         },
         op4(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -136,6 +149,8 @@ export default {
             })
         },
         op7(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -160,6 +175,8 @@ export default {
         },
         //q3//
         op9(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -192,6 +209,8 @@ export default {
             })
         },
         op12(){
+            this.$store.dispatch('incrementAsync');
+
              swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -207,6 +226,8 @@ export default {
         },
         //q4//
         op13(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -221,6 +242,8 @@ export default {
             })
         },
         op14(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -235,6 +258,8 @@ export default {
             })
         },
         op15(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,
@@ -249,6 +274,8 @@ export default {
             })
         },
         op16(){
+            this.$store.dispatch('incrementAsync');
+
             swal({
                 title: 'Bien hecho!',
                 width: 600,

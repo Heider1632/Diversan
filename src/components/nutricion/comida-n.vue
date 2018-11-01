@@ -1,12 +1,12 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-11 main">
+            <div class="col-lg-8 col-md-8 col-sm-8 main">
                 <div class="box-piramide">
                   <img src="../../assets/piramide/piramide.svg" class="piramid-img img-fluid" alt="Responsive image">
                 </div>
             </div>
-            <div class="col-lg-2 col-md-8 col-sm-11">
+            <div class="col-lg-2 col-md-2 col-sm-2">
                 <div class="elements-group">
                     <div class="g1" @click="showInf1()">
                         <h3>Grupo 6</h3>
@@ -28,6 +28,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+              <navbar />
+            </div>
         </div>
 
          <!-- modal piramide -->
@@ -43,7 +46,9 @@
 </template>
 <script>
 import swal from 'sweetalert2'
+import navbar from '../navbar'
 export default {
+    components: { navbar },
     data() {
         return {
         }

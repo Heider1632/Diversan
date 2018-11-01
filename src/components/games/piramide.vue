@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row bg">
           <!-- juego piramide -->
-          <div class="piramid-container col-lg-6 col-md-6 col-sm-6">
+          <div class="piramid-container col-lg-5 col-md-5 col-sm-5">
             <div class="piramid">
               <div :id="level1.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
               <div :id="level2.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
@@ -19,13 +19,20 @@
               <div v-bind:class="[classOn]" :id="item" draggable="true" v-on:dragstart="dragstart($event)" v-on:dragend="dragend($event)"></div>
             </div>
           </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <navbar />
+          </div>
         </div>
       </div>
 </template>
 <script>
-import swal from 'sweetalert2';
+import swal from 'sweetalert2'
+import navbar from '../navbar'
 import bulma from 'bulma'
 export default {
+    name: 'piramide',
+    components: { navbar },
      data() {
         return {
           draggingItem: undefined,

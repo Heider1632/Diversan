@@ -1,8 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row down">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-            <h3 align="center">Tips</h3>
+            <div class="col-lg-5 col-md-5 col-sm-11">
             <div class="bg-l">
                 <div role="tablist">
                     <b-card no-body class="mb-1">
@@ -159,21 +158,30 @@
                 </div>
             </div>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="col-lg-5 col-md-5 col-sm-11">
                 <aside class="aside">
                     <h3 align="center">Dieta: </h3>
                     <p class="lead text-justify">
                     la dieta es el conjunto de alimentos que consumes a diario. Esta te permite obtener a través de dichos alimentos, los nutrientes necesarios para tu desarrollo. Para que la dieta sea saludable debe incluir alimentos variados en las cantidades adecuadas.
                     </p>
                 </aside>
-
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+              <navbar />
             </div>
         </div>
     </div>
 </template>
+<script>
+import navbar from '../navbar'
+export default {
+  name: 'tips',
+  components: { navbar }
+}
+</script>
 <style>
 .down{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .bg-l{
     display: flex;
@@ -184,7 +192,6 @@
   background-color: blanchedalmond;
   border-radius: 25px;
   padding: 30px;
-  width: 100%;
 }
 
 .card{
