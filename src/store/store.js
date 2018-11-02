@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
 
 Vue.use(Vuex);
 
@@ -9,12 +8,16 @@ export const store = new Vuex.Store({
     token: localStorage.getItem('user-token') || '',
     status: '',
     points: 0,
+    fondo: 'fondo',
+    language: 'es'
   },
   getters:{
     isAuthenticated: state => !!state.token,
     authStatus: state => state.status,
     getPoints: state => state.points,
     getToken: state => state.token,
+    getLanguage: state => state.language,
+    getFondo: state => state.fondo
   },
   mutations:{
     auth_request: (state) => {
@@ -29,6 +32,18 @@ export const store = new Vuex.Store({
     },
     increment_points: (state) => {
       state.points++
+    },
+    change_background: (state) => {
+      state.fondo = 'fondo2'
+    },
+    backBackground: (state) => {
+      state.fondo = 'fondo'
+    },
+    change_language:(state) => {
+      state.language = 'en'
+    },
+    backLanguage: (state) => {
+      state.language = 'es'
     }
   },
   actions:{
@@ -46,10 +61,24 @@ export const store = new Vuex.Store({
             context.commit('auth_success', token);
 
         }, 2000);
+        //cambio de fondo dinamico
+        context.commit('change_background')
 
       },
       incrementAsync: (context) => {
         context.commit('increment_points');
+      },
+      backgroundAsync: (context) => {
+        context.commit('change_background');
+      },
+      backAsync: (context) => {
+        context.commit('backBackground');
+      },
+      LanguageAsync: (context) => {
+        context.commit('change_language');
+      },
+      backLanguageAsync: (context) => {
+        context.commit('backLanguage');
       }
     }
 })

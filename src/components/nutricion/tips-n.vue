@@ -173,6 +173,7 @@
     </div>
 </template>
 <script>
+import {store} from '../../store/store'
 import navbar from '../navbar'
 export default {
   name: 'tips',

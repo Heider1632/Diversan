@@ -5,19 +5,19 @@
                 <div class="col-lg-11 col-md-11 col-sm-8 bg-g">
                     <div class="sm animated lightSpeedIn delay-500ms">
                         <img src="../../assets/icons/handshake.svg" class="pic1"  @click="showModal"/>
-                        <a class="alert-link" href="#" @click="showModal">Aprendamos</a>
+                        <a class="alert-link" href="#" @click="showModal">{{ op1 }}</a>
                     </div>
                     <div class="sm animated lightSpeedIn delay-1000ms">
                         <img src="../../assets/icons/piramide-ico.svg" class="pic2" @click="goPiramide()"/>
-                        <router-link class="alert-link" to="/comidanutricion">Piramide</router-link>
+                        <router-link class="alert-link" to="/comidanutricion">{{ op2 }}</router-link>
                     </div>
                     <div class="sm animated lightSpeedIn delay-1500ms" >
                         <img src="../../assets/icons/apple.svg" class="pic3" @click="goAlimentacion()"/>
-                        <router-link class="alert-link" to="/tipsnutricion">Alimentación</router-link>
+                        <router-link class="alert-link" to="/tipsnutricion">{{ op3 }}</router-link>
                     </div>
                     <div class="sm animated lightSpeedIn delay-2000ms">
                         <img src="../../assets/icons/windmill.svg" class="pic4" @click="goJuega()"/>
-                        <router-link class="alert-link" to="/juegonutricion">Juega</router-link>
+                        <router-link class="alert-link" to="/juegonutricion">{{ op4 }}</router-link>
                     </div>
                 <div class="h-b"></div>
                 </div>
@@ -39,12 +39,58 @@
     </main>
 </template>
 <script>
+import {store} from '../../store/store'
 import navbar from '../navbar'
 export default {
     name: 'homenutricion',
     components: { navbar},
-    beforeCreate: function () {
-
+    data(){
+      return{
+        language: store.getters.getLanguage,
+        op1: 'Aprendamos',
+        op2: 'Piramide',
+        op3: 'Alimentación',
+        op4: 'Juega'
+      }
+    },
+    mounted(){
+      if(this.language == 'en'){
+        this.op1 = 'let`s learn';
+        this.op2 = 'Food Pyramid';
+        this.op3 = 'Feeding';
+        this.op4 = 'Game';
+      }else{
+        this.op1 = 'Aprendamos';
+        this.op2 = 'Piramide';
+        this.op3 = 'Alimentación';
+        this.op4 = 'Juega';
+      }
+    },
+    beforeUpdate(){
+      if(this.language == 'en'){
+        this.op1 = 'let`s learn';
+        this.op2 = 'Food Pyramid';
+        this.op3 = 'Feeding';
+        this.op4 = 'Game';
+      }else{
+        this.op1 = 'Aprendamos';
+        this.op2 = 'Piramide';
+        this.op3 = 'Alimentación';
+        this.op4 = 'Juega';
+      }
+    },
+    update(){
+      if(this.language == 'en'){
+        this.op1 = 'let`s learn';
+        this.op2 = 'Food Pyramid';
+        this.op3 = 'Feeding';
+        this.op4 = 'Game';
+      }else{
+        this.op1 = 'Aprendamos';
+        this.op2 = 'Piramide';
+        this.op3 = 'Alimentación';
+        this.op4 = 'Juega';
+      }
     },
     methods: {
     showModal () {

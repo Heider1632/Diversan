@@ -5,7 +5,6 @@
     <i></i>
     <i></i>
     <i></i>
-    <i></i>
   </label>
 
   <div class="nav-wrapper">
@@ -46,6 +45,7 @@
 </nav>
 </template>
 <script>
+import {store} from '../store/store'
 export default {
   data() {
     return {
@@ -54,38 +54,72 @@ export default {
       item3: 'SALIR',
       item4: 'ESPAÑOL',
       item5: 'INGLÉS',
-      ingles: undefined,
+      language: store.getters.getLanguage,
     }
   },
+  mounted(){
+    if(this.language == 'en'){
+      this.item1 = 'HOME';
+      this.item2 = 'BACK';
+      this.item3 = 'LOGOUT';
+      this.item4 = 'SPAIN';
+      this.item5 = 'ENGLISH'
+    }else{
+      this.item1 = 'INICIO';
+      this.item2 = 'ATRAS';
+      this.item3 = 'SALIR';
+      this.item4 = 'ESPAÑOL';
+      this.item5 = 'INGLÉS'
+    }
+  },
+  beforeUpdate(){
+    if(this.language == 'en'){
+      this.item1 = 'HOME';
+      this.item2 = 'BACK';
+      this.item3 = 'LOGOUT';
+      this.item4 = 'SPAIN';
+      this.item5 = 'ENGLISH'
+    }else{
+      this.item1 = 'INICIO';
+      this.item2 = 'ATRAS';
+      this.item3 = 'SALIR';
+      this.item4 = 'ESPAÑOL';
+      this.item5 = 'INGLÉS'
+    }
+  },
+  update(){
+    if(this.language == 'en'){
+      this.item1 = 'HOME';
+      this.item2 = 'BACK';
+      this.item3 = 'LOGOUT';
+      this.item4 = 'SPAIN';
+      this.item5 = 'ENGLISH'
+    }else{
+      this.item1 = 'INICIO';
+      this.item2 = 'ATRAS';
+      this.item3 = 'SALIR';
+      this.item4 = 'ESPAÑOL';
+      this.item5 = 'INGLÉS'
+    }
+  },
+
   methods: {
     atras() {
       this.$router.go(-1);
     },
     cambiarNormal() {
-      this.ingles = false;
-
-      if (this.ingles == false) {
-        console.log('hola');
-        this.item1 = 'INICIO';
-        this.item2 = 'ATRAS';
-        this.item3 = 'ESPAÑOL';
-        this.item4 = 'INGLÉS';
-      }
+      this.$store.dispatch('backLanguageAsync');
     },
     cambiarIngles() {
-      this.ingles = true;
-
-      if (this.ingles == true) {
-        console.log('hola');
-        this.item1 = 'HOME';
-        this.item2 = 'BACK';
-        this.item3 = 'SPAIN';
-        this.item4 = 'ENGLISH';
-      }
+      this.$store.dispatch('LanguageAsync');
     },
     logout() {
-        this.$cookies.remove('user')
-        this.$router.push('/')
+      //regresar fondo
+      this.$store.dispatch('backAsync');
+      //remover user//
+      this.$cookies.remove('user');
+      //redireccionar a incio//
+      this.$router.push('/')
     }
   }
 }
