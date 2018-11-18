@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router'
 import home from '../components/home'
 import homeNutricion from '../components/nutricion/home-n'
+import conceptosNutricion from '../components/nutricion/concepts'
 import comidaNutricion from '../components/nutricion/comida-n'
 import tipsNutricion from '../components/nutricion/tips-n'
 import gameNutricion from '../components/nutricion/game-n'
@@ -27,6 +28,11 @@ let router = new VueRouter({
 			path: '/inicionutricion',
 			name: 'inicionutricion',
 			component: homeNutricion,
+		},
+		{
+			path: '/conceptosnutricion',
+			name: 'conceptosnutricion',
+			component: conceptosNutricion,
 		},
 		{
 			path: '/comidanutricion',

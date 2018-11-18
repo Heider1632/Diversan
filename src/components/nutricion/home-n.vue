@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-lg-11 col-md-11 col-sm-8 bg-g">
                     <div class="sm animated lightSpeedIn delay-500ms">
-                        <img src="../../assets/icons/handshake.svg" class="pic1"  @click="showModal"/>
-                        <a class="alert-link" href="#" @click="showModal">{{ op1 }}</a>
+                        <img src="../../assets/icons/handshake.svg" class="pic1"  @click="goConceptos()"/>
+                        <a class="alert-link" href="#" @click="goConceptos()">{{ op1 }}</a>
                     </div>
                     <div class="sm animated lightSpeedIn delay-1000ms">
                         <img src="../../assets/icons/piramide-ico.svg" class="pic2" @click="goPiramide()"/>
@@ -25,16 +25,6 @@
                   <navbar />
                 </div>
             </div>
-
-            <!-- modal concepto -->
-            <b-modal ref="myModalRef" hide-footer title="Bienvenido">
-                    <div class="d-block text-center">
-                        <video height="400" width="400" controls>
-                           <source src="../../assets/video/nutricion.mp4">
-                        </video>
-                    </div>
-                    <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Cerrar</b-btn>
-            </b-modal>
         </div>
     </main>
 </template>
@@ -107,6 +97,9 @@ export default {
     },
     goJuega(){
         this.$router.push({ path: '/juegonutricion' })
+    },
+    goConceptos(){
+      this.$router.push({ path: '/conceptosnutricion' })
     }
   }
 }

@@ -31,7 +31,7 @@
 </template>
 <script>
 import navbar from '../navbar'
-import bulma from 'bulma'
+import 'bulma/css/bulma.min.css'
 // Load the full build.
 var _ = require('lodash');
 

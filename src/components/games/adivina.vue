@@ -81,6 +81,56 @@ export default {
     components: { navbar },
     data(){
         return{
+          questions: {
+            q1:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q2:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q3:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q4:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q5:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q6:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q7:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q8:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q9:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q10:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q11:{
+              name: '',
+              options:['', '', '', '', '']
+            },
+            q12:{
+              name: '',
+              options:['', '', '', '', '']
+            }
+          }
 
         }
     },
