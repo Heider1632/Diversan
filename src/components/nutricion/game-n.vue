@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2">
+    <div class="col-lg-2 col-md-2 col-sm-2 ajust-t-2">
       <navbar />
     </div>
   </div>
@@ -120,5 +120,10 @@ export default {
     margin-left: 0px;
     margin-right: 0px;
   }
+}
+
+.ajust-t-2{
+  position: relative;
+  margin-top: -120px;
 }
 </style>

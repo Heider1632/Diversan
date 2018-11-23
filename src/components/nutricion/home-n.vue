@@ -49,24 +49,6 @@ export default {
         this.op2 = 'Food Pyramid';
         this.op3 = 'Feeding';
         this.op4 = 'Game';
-      }else{
-        this.op1 = 'Aprendamos';
-        this.op2 = 'Piramide';
-        this.op3 = 'Alimentación';
-        this.op4 = 'Juega';
-      }
-    },
-    beforeUpdate(){
-      if(this.language == 'en'){
-        this.op1 = 'let`s learn';
-        this.op2 = 'Food Pyramid';
-        this.op3 = 'Feeding';
-        this.op4 = 'Game';
-      }else{
-        this.op1 = 'Aprendamos';
-        this.op2 = 'Piramide';
-        this.op3 = 'Alimentación';
-        this.op4 = 'Juega';
       }
     },
     update(){
@@ -75,11 +57,6 @@ export default {
         this.op2 = 'Food Pyramid';
         this.op3 = 'Feeding';
         this.op4 = 'Game';
-      }else{
-        this.op1 = 'Aprendamos';
-        this.op2 = 'Piramide';
-        this.op3 = 'Alimentación';
-        this.op4 = 'Juega';
       }
     },
     methods: {
