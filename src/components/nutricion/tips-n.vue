@@ -128,9 +128,15 @@
 </div>
 </template>
 <script>
-import {
-  store
-} from '../../store/store'
+import {store} from '../../store/store'
+
+import image1 from '../../assets/tips/agua.svg'
+import image2 from '../../assets/tips/Desayuno.svg'
+import image3 from '../../assets/tips/frutas.svg'
+import image4 from '../../assets/tips/lacteos.svg'
+import image5 from '../../assets/tips/verduras.svg'
+
+
 import navbar from '../navbar'
 export default {
   name: 'tips',
@@ -154,7 +160,7 @@ export default {
         {ol: 'almuerzo'},
         {ol: 'cena'}
       ],
-      image: '@/assets/tips/Desayuno.svg',
+      image: image2,
       img_name: null,
       detalle: null,
     }
@@ -181,7 +187,7 @@ export default {
       this.t_5 = 'No consumas gasesosas, mejor consume jugos naturales';
       this.t_6 = 'No te excedas en golosinas mejor come frutas';
       this.t_7 = 'Recuerda que debes comer las tres comidas principales';
-    }  
+    }
   },
   beforeUpdate(){
     if(this.language == 'en'){
@@ -233,37 +239,37 @@ export default {
   },
   methods: {
     viewImg1(){
-      this.image = '../../assets/tips/Desayuno.svg';
+      this.image = image2;
       this.img_name = 'Desayuno';
       this.detalle = '#desayunoMap';
     },
     viewImg2(){
-      this.image = '../../assets/tips/frutas.svg';
+      this.image = image3;
       this.img_name = 'Frutas';
       this.detalle = '#frutasMap';
     },
     viewImg3(){
-      this.image = '../../assets/tips/verduras.svg';
+      this.image = image5;
       this.img_name = 'Verduras';
       this.detalle = '#verdurasMap';
     },
     viewImg4(){
-      this.image = '../../assets/tips/agua.svg';
+      this.image = image1;
       this.img_name = 'Agua';
       this.detalle = '#aguaMap';
     },
     viewImg5(){
-      this.image = '../../assets/tips/lacteos.svg';
+      this.image = image1;
       this.img_name = 'lacteos';
       this.detalle = '#lacteosMap';
     },
     viewImg6(){
-      this.image = '../../assets/tips/frutas.svg';
+      this.image = image3;
       this.img_name = 'frutas';
       this.detalle = '#frutasMap';
     },
     viewImg7(){
-      this.image = '../../assets/tips/Desayuno.svg';
+      this.image = image1;
       this.img_name = 'Desayuno';
       this.detalle = '#desayunoMap';
     },
