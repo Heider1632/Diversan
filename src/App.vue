@@ -6,8 +6,10 @@
       <div class="col-lg-12 col-md-12 col-sm-12">
         <router-view />
       </div>
+      <button class="btn btn-primary btn-sm fixed" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)">
+      {{ audio.isPlaying ? 'Pause' : 'Play' }} {{ audio.name }}
+      </button>
     </div>
-    <audio :src="require('./assets/audio/fondo.mp3')" autoplay></audio>
   </div>
 </div>
 </template>
@@ -20,7 +22,14 @@ export default {
   data() {
     return {
       //variable del fondo dinamico
-      fondo: 'fondo'
+      fondo: 'fondo',
+      audio:
+      {
+        id: 'music-fondo',
+        name: 'music-fondo',
+        file: new Audio(require('./assets/audio/fondo.mp3')),
+        isPlaying: false
+      }
     }
   },
   created() {
@@ -71,6 +80,17 @@ export default {
     }else{
       this.fondo = 'fondo'
     }
+  },
+  methods: {
+    play (audio) {
+     audio.isPlaying = true;
+     audio.file.play();
+    },
+
+    pause (audio) {
+     audio.isPlaying = false;
+     audio.file.pause();
+   }
   }
 }
 </script>
@@ -110,5 +130,11 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.fixed{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>

@@ -8,6 +8,7 @@ import tipsNutricion from '../components/nutricion/tips-n'
 import gameNutricion from '../components/nutricion/game-n'
 import piramide from '../components/games/piramide'
 import adivina from '../components/games/adivina'
+import hu from '../components/games/hu.vue'
 import concentrate from '../components/games/concentrate'
 import { store } from '../store/store' // your vuex store
 
@@ -63,8 +64,12 @@ let router = new VueRouter({
 			path: '/juegoConcentrate',
 			name: 'juegoConcentrate',
 			component: concentrate,
+		},
+		{
+			path: '/juegoHealtly',
+			name: 'juegoHealtly',
+			component: hu,
 		}
-
 	]
 });
 

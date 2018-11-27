@@ -121,7 +121,7 @@
         <area shape="rect" coords="0,161,300,350" @mouseover="second"/>
       </map>
     </div>
-    <div class="col-lg-1 col-md-1 col-sm-1 ajust-t">
+    <div class="col-lg-1 col-md-1 col-sm-1 ajust-t r-40">
       <navbar />
     </div>
   </div>
@@ -285,6 +285,10 @@ export default {
 <style>
 .down {
   margin-top: 50px;
+}
+
+.r-40{
+  right: 40px;
 }
 
 .bg-l {

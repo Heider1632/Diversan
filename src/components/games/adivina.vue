@@ -2,7 +2,6 @@
 <div class="row">
 <div class="col-lg-10 col-md-10 col-sm-10">
   <div class="wrapper">
-
           <!-- primera pregunta -->
             <!-- card -->
             <div class="q-1">
@@ -68,7 +67,7 @@
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-2 col-sm-2">
+          <div class="col-lg-2 col-md-2 col-sm-2 ajust-m">
                 <navbar />
           </div>
       </div>
@@ -347,6 +346,11 @@ export default {
   width: 1000px;
   margin-top: 100px;
   margin-left: 5px;
+}
+
+.ajust-m{
+    position: absolute;
+    margin-top: -30px;
 }
 
 .q-1{

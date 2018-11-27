@@ -7,38 +7,45 @@
   </div>
   <div class="row">
     <div class="col-lg-10 col-md-10 col-sm-10">
-      <div class="columns is-3 controls">
+      <div class="columns is-multiline controls">
         <!-- primer juego -->
         <div class="colum games">
-          <div class="card target" style="width: 15rem;" @click="goAdivina()">
+          <div class="card target" style="width: 13rem;" @click="goAdivina()">
             <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
             <hr>
             <div class="card-body">
               <h5 class="card-title" align="center">Sabias qué...</h5>
             </div>
-            <p class="card-text text-center text-justify">Descubre que tanto saber del tema y como puedes mejorar respondiendo entas divertidas preguntas!</p>
           </div>
         </div>
         <!-- segundo juego -->
         <div class="colum games">
-          <div class="card target" style="width: 15rem;" @click="goPiramide()">
+          <div class="card target" style="width: 13rem;" @click="goPiramide()">
             <img class="card-img-top topic-game" src="../../assets/icons/piramide-ico.svg" alt="Piramide">
             <hr>
             <div class="card-body">
               <h5 class="card-title" align="center">Juega piramide</h5>
             </div>
-            <p class="card-text text-center text-justify">diviertete con un juego de arrastra y suelta con la piramide alimenticia y todos las comidas y frutas que puedas imaginas</p>
           </div>
         </div>
         <!-- tercer juego -->
         <div class="colum games">
-          <div class="card target" style="width: 15rem;" @click="goConcentrate()">
+          <div class="card target" style="width: 13rem;" @click="goConcentrate()">
             <img class="card-img-top topic-game" src="../../assets/games/cerebro.png" img-alt="Cerebro">
             <hr>
             <div class="card-body">
               <h5 class="card-title" align="center">Juega Concentrate</h5>
             </div>
-            <p class="card-text text-center text-justify">Resuelve este divertido puzzle donde la concentracion y la memoria son importantes recordando donde estaba cada elemento</p>
+          </div>
+        </div>
+        <!-- cuarto juego -->
+        <div class="colum games">
+          <div class="card target" style="width: 13rem;" @click="goHealtly()">
+            <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
+            <hr>
+            <div class="card-body">
+              <h5 class="card-title" align="center">Healthly and unhealtly</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -63,19 +70,25 @@ export default {
     return {}
   },
   methods: {
-    goConcentrate() {
+    goConcentrate(){
+      console.log('work');
       this.$router.push({
         path: '/juegoConcentrate'
       })
     },
-    goPiramide() {
+    goPiramide(){
       this.$router.push({
         path: '/juegoPiramide'
       })
     },
-    goAdivina() {
+    goAdivina(){
       this.$router.push({
         path: '/juegoAdivina'
+      })
+    },
+    goHealtly(){
+      this.$router.push({
+        path: '/juegoHealtly'
       })
     }
   }
@@ -83,12 +96,8 @@ export default {
 }
 </script>
 <style>
-.controls {
-  margin-top: 5px;
-}
-
 .games {
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .topic-game {
@@ -113,6 +122,7 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -123,7 +133,7 @@ export default {
 }
 
 .ajust-t-2{
-  position: relative;
-  margin-top: -120px;
+  position: absolute;
+  margin-top: -190px;
 }
 </style>

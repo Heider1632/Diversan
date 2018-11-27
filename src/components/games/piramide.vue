@@ -427,7 +427,7 @@ export default {
 </script>
 <style>
 .bg{
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .piramid-container{
@@ -447,7 +447,6 @@ export default {
   position: relative;
   left: 50px;
 }
-
 
 .fill {
   display: inline-block;
@@ -472,7 +471,6 @@ export default {
   height: 40px;
   width: 40px;
 }
-
 
 /* elementos de la piramide */
 
