@@ -8,22 +8,22 @@
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2">
       <div class="elements-group">
-        <div class="g1" @click="showInf1()">
+        <div class="g1" @click="showInf6()">
           <h3>{{ g_6 }}</h3>
         </div>
-        <div class="g2" @click="showInf2()">
+        <div class="g2" @click="showInf5()">
           <h3>{{ g_5 }}</h3>
         </div>
-        <div class="g3" @click="showInf3()">
+        <div class="g3" @click="showInf4()">
           <h3>{{ g_4 }}</h3>
         </div>
-        <div class="g4" @click="showInf4()">
+        <div class="g4" @click="showInf3()">
           <h3>{{ g_3 }}</h3>
         </div>
-        <div class="g5" @click="showInf5()">
+        <div class="g5" @click="showInf2()">
           <h3>{{ g_2 }}</h3>
         </div>
-        <div class="g6" @click="showInf6()">
+        <div class="g6" @click="showInf1()">
           <h3>{{ g_1 }}</h3>
         </div>
       </div>
@@ -62,12 +62,12 @@ export default {
       g_2: 'Grupo 2',
       g_1: 'Grupo 1',
       concept: 'Para que tu alimentación sea correcta, es importante que incluya alimentos variados en las cantidades adecuadas. La pirámide alimenticia te ayuda a identificar con facilidad cuáles alimentos son necesarios y qué cantidad debes consumir en una dieta balanceada. Para esto, se divide en varios grupos:',
-      text1: 'El sexto grupo incluye grasas, aceites y dulces. ¡Estos alimentos te aportan muchísima energía y pocos nutrientes y por eso debes consumirlos en menor cantidad!.',
-      text2: 'El quinto grupo incluye carnes, pescados y huevos. Estos alimentos son muy ricos en proteínas, que son los bloquecillos que construyen tu cuerpo. Son fundamentales pata tu optimo crecimiento',
-      text3: 'El cuarto grupo son los lacteos, que te proveen de calcio que te ayudan a mantener huesos sanos y fuertes.',
-      text4: 'El tercer grupo incluye las frutas, las verduras y las hortalizas.¡Son alimentos ricos en vitaminas y minerales!',
-      text5: 'El segundo grupo incluye alimentos como cereales, pan, arroz, leguminosas y pasta.¡Estos son los que te aportan más vitaminas y carbohidratos!',
-      text6: 'El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.'
+      text6: 'El sexto grupo incluye grasas, aceites y dulces. ¡Estos alimentos te aportan muchísima energía y pocos nutrientes y por eso debes consumirlos en menor cantidad!.',
+      text5: 'El quinto grupo incluye carnes, pescados y huevos. Estos alimentos son muy ricos en proteínas, que son los bloquecillos que construyen tu cuerpo. Son fundamentales pata tu optimo crecimiento',
+      text4: 'El cuarto grupo son los lacteos, que te proveen de calcio que te ayudan a mantener huesos sanos y fuertes.',
+      text3: 'El tercer grupo incluye las frutas, las verduras y las hortalizas.¡Son alimentos ricos en vitaminas y minerales!',
+      text2: 'El segundo grupo incluye alimentos como cereales, pan, arroz, leguminosas y pasta.¡Estos son los que te aportan más vitaminas y carbohidratos!',
+      text1: 'El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.'
 
     }
   },
@@ -106,7 +106,7 @@ export default {
     }
   },
   methods: {
-    showInf1() {
+    showInf6() {
       swal({
         position: 'top-start',
         title: this.g_6,
@@ -120,7 +120,7 @@ export default {
         timer: 6000
       })
     },
-    showInf2() {
+    showInf5() {
       swal({
         position: 'top-start',
         title: this.g_5,
@@ -133,7 +133,7 @@ export default {
         animation: false,
       })
     },
-    showInf3() {
+    showInf4() {
       swal({
         position: 'top-start',
         title: this.g_4,
@@ -146,7 +146,7 @@ export default {
         animation: false,
       })
     },
-    showInf4() {
+    showInf3() {
       swal({
         position: 'top-start',
         title: this.g_3,
@@ -159,7 +159,7 @@ export default {
         animation: false,
       })
     },
-    showInf5() {
+    showInf2() {
       swal({
         position: 'top-start',
         title: this.g_2,
@@ -172,7 +172,7 @@ export default {
         animation: false,
       })
     },
-    showInf6() {
+    showInf1() {
       swal({
         position: 'top-start',
         title: this.g_1,

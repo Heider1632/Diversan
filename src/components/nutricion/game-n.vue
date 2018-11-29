@@ -14,7 +14,7 @@
             <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
             <hr>
             <div class="card-body">
-              <h5 class="card-title" align="center">Sabias qué...</h5>
+              <h5 class="card-title" align="center">{{ game_1 }}</h5>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
             <img class="card-img-top topic-game" src="../../assets/icons/piramide-ico.svg" alt="Piramide">
             <hr>
             <div class="card-body">
-              <h5 class="card-title" align="center">Juega piramide</h5>
+              <h5 class="card-title" align="center">{{ game_2 }}</h5>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
             <img class="card-img-top topic-game" src="../../assets/games/cerebro.png" img-alt="Cerebro">
             <hr>
             <div class="card-body">
-              <h5 class="card-title" align="center">Juega Concentrate</h5>
+              <h5 class="card-title" align="center">{{ game_3 }}</h5>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
             <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
             <hr>
             <div class="card-body">
-              <h5 class="card-title" align="center">Healthly and unhealtly</h5>
+              <h5 class="card-title" align="center">{{ game_4 }}</h5>
             </div>
           </div>
         </div>
@@ -61,13 +61,36 @@
 import bulma from 'bulma'
 import navbar from '../navbar'
 import user from '../user'
+import {store} from '../../store/store'
 export default {
   name: 'game',
   components: {
     navbar, user
   },
   data() {
-    return {}
+    return {
+      language: store.getters.getLanguage,
+      game_1: 'Sabias qué...',
+      game_2: 'Juega piramide',
+      game_3: 'Juega Concentrate',
+      game_4: 'Alimentos sanos y no sanos'
+    }
+  },
+  mounted(){
+    if(this.language == 'en'){
+      this.game_1 = 'You know that...';
+      this.game_2 = 'Food Pyramid';
+      this.game_3 = 'Game concentration';
+      this.game_4 = 'Healthly and unhealtly';
+    }
+  },
+  update(){
+    if(this.language == 'en'){
+      this.game_1 = 'Know you that...';
+      this.game_2 = 'Food Pyramid';
+      this.game_3 = 'Game concentration';
+      this.game_4 = 'Healthly and unhealtly';
+    }
   },
   methods: {
     goConcentrate(){
