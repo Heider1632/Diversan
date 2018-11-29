@@ -110,21 +110,22 @@ export default {
       swal({
         position: 'top-start',
         title: this.g_6,
-        text: this.text6,
+        html: '<p>' + this.text6 + '</p>' +
+              '<img src="' + require('../../assets/piramide/comidarapida.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/pizza.svg'),
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Pizza',
         showConfirmButton: false,
-        animation: false,
-        timer: 6000
+        animation: false
       })
     },
     showInf5() {
       swal({
         position: 'top-start',
         title: this.g_5,
-        text: this.text5,
+        html: '<p>' + this.text5 + '</p>' +
+              '<img src="' + require('../../assets/piramide/carnes.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/filete.svg'),
         imageWidth: 200,
         imageHeight: 200,
@@ -137,7 +138,8 @@ export default {
       swal({
         position: 'top-start',
         title: this.g_4,
-        text: this.text4,
+        html: '<p>' + this.text4 + '</p>' +
+              '<img src="' + require('../../assets/piramide/lacteos.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/leche.svg'),
         imageWidth: 200,
         imageHeight: 200,
@@ -150,11 +152,12 @@ export default {
       swal({
         position: 'top-start',
         title: this.g_3,
-        text: this.text3,
+        html: '<p>' + this.text3 + '</p>' +
+              '<img src="' + require('../../assets/piramide/frutas.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/manzana.svg'),
         imageWidth: 200,
         imageHeight: 200,
-        imageAlt: 'Leche',
+        imageAlt: 'Frutas',
         showConfirmButton: false,
         animation: false,
       })
@@ -163,7 +166,8 @@ export default {
       swal({
         position: 'top-start',
         title: this.g_2,
-        text: this.text2,
+        html: '<p>' + this.text2 + '</p>' +
+              '<img src="' + require('../../assets/piramide/arinas.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/pan.svg'),
         imageWidth: 200,
         imageHeight: 200,
@@ -176,7 +180,8 @@ export default {
       swal({
         position: 'top-start',
         title: this.g_1,
-        text: this.text1,
+        html: '<p>' + this.text6 + '</p>' +
+              '<img src="' + require('../../assets/piramide/agua.svg') + '" class="swal2-image" width="300" height="300" alt="list6" style="display: flex;">',
         imageUrl: require('../../assets/icons/agua.svg'),
         imageWidth: 200,
         imageHeight: 200,
