@@ -114,12 +114,16 @@
         </p>
       </aside>
 
-      <img :src="image" :alt="img_name" width="200px" height="200px" :usermap="detalle" />
-
-      <map :name="detalle">
-        <area shape="circle" coords="90,58,5" @mouseover="fisrt" />
-        <area shape="rect" coords="0,161,300,350" @mouseover="second"/>
-      </map>
+      <div class="row">
+      <div class="col-lg-6 col-md-6">
+      <img :src="image" :alt="img_name" width="200px" height="200px" />
+      </div>
+      <div class="col-lg-1 col-md-1 m-t-40">
+      <button class="btn btn-info btn-lg fixed" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)">
+      {{ audio.isPlaying ? 'Pause' : 'Play' }} {{ audio.name }}
+      </button>
+      </div>
+      </div>
     </div>
     <div class="col-lg-1 col-md-1 col-sm-1 ajust-t r-40">
       <navbar />
@@ -162,7 +166,14 @@ export default {
       ],
       image: image2,
       img_name: null,
-      detalle: null,
+      audio_1: '',
+      audio:
+      {
+        id: 'music',
+        name: 'consejo',
+        file: new Audio(require('../../assets/audio/numero 1.mp3')),
+        isPlaying: false
+      }
     }
   },
   mounted(){
@@ -176,41 +187,6 @@ export default {
       this.t_5 = 'Do not consume soft drinks, better consume natural juices';
       this.t_6 = 'Do not exceed in consuming goodies, better eat fruits';
       this.t_7 = 'Remember that you must eat the three main meals';
-
-    }else{
-      this.dieta_title = 'POR QUÉ UNA DIETA BALACEADA?';
-      this.dieta_body = 'la dieta es el conjunto de alimentos que consumes a diario. Esta te permite obtener a través de dichos alimentos, los nutrientes necesarios para tu desarrollo. Para que la dieta sea saludable debe incluir alimentos variados en las cantidades adecuadas.';
-      this.t_1 = 'El desayuno es la comida más importante del día porque te da mucha energía! Nunca te olvides de desayunar!';
-      this.t_2 = 'Las frutas te dan muchas vitaminas y nutrientes que te harán crecer grande y fuerte';
-      this.t_3 = 'las verduras combaten muchas enfermedades y mejoran tu semblante';
-      this.t_4 = 'Tomar mucha agua ayuda a liberar toxinas';
-      this.t_5 = 'No consumas gasesosas, mejor consume jugos naturales';
-      this.t_6 = 'No te excedas en golosinas mejor come frutas';
-      this.t_7 = 'Recuerda que debes comer las tres comidas principales';
-    }
-  },
-  beforeUpdate(){
-    if(this.language == 'en'){
-      this.dieta_title = 'WHAT IS A BALANCED DIET?';
-      this.dieta_body = 'Diet is the set of aliments that you consume on a daily basis. This allows you to obtain the nutrients necessary for your appropriate development. For a diet to be healthy it must include a variety of aliments in the right amounts. We present some tips to make your diet a healthy diet for your good development.';
-      this.t_1 = 'Breakfast is the most important meal of the day because it gives you a lot of energy! Never forget to have breakfast!';
-      this.t_2 = 'Fruits give you many vitamins and nutrients that will make you grow big and strong';
-      this.t_3 = 'The vegetables fight against many diseases and improve your look';
-      this.t_4 = 'Drinking a  lot of water helps to release toxins';
-      this.t_5 = 'Do not consume soft drinks, better consume natural juices';
-      this.t_6 = 'Do not exceed in consuming goodies, better eat fruits';
-      this.t_7 = 'Remember that you must eat the three main meals';
-
-    }else{
-      this.dieta_title = 'POR QUÉ UNA DIETA BALACEADA?';
-      this.dieta_body = 'la dieta es el conjunto de alimentos que consumes a diario. Esta te permite obtener a través de dichos alimentos, los nutrientes necesarios para tu desarrollo. Para que la dieta sea saludable debe incluir alimentos variados en las cantidades adecuadas.';
-      this.t_1 = 'El desayuno es la comida más importante del día porque te da mucha energía! Nunca te olvides de desayunar!';
-      this.t_2 = 'Las frutas te dan muchas vitaminas y nutrientes que te harán crecer grande y fuerte';
-      this.t_3 = 'las verduras combaten muchas enfermedades y mejoran tu semblante';
-      this.t_4 = 'Tomar mucha agua ayuda a liberar toxinas';
-      this.t_5 = 'No consumas gasesosas, mejor consume jugos naturales';
-      this.t_6 = 'No te excedas en golosinas mejor come frutas';
-      this.t_7 = 'Recuerda que debes comer las tres comidas principales';
     }
   },
   update(){
@@ -224,61 +200,51 @@ export default {
       this.t_5 = 'Do not consume soft drinks, better consume natural juices';
       this.t_6 = 'Do not exceed in consuming goodies, better eat fruits';
       this.t_7 = 'Remember that you must eat the three main meals';
-
-    }else{
-      this.dieta_title = 'POR QUÉ UNA DIETA BALACEADA?';
-      this.dieta_body = 'la dieta es el conjunto de alimentos que consumes a diario. Esta te permite obtener a través de dichos alimentos, los nutrientes necesarios para tu desarrollo. Para que la dieta sea saludable debe incluir alimentos variados en las cantidades adecuadas.';
-      this.t_1 = 'El desayuno es la comida más importante del día porque te da mucha energía! Nunca te olvides de desayunar!';
-      this.t_2 = 'Las frutas te dan muchas vitaminas y nutrientes que te harán crecer grande y fuerte';
-      this.t_3 = 'las verduras combaten muchas enfermedades y mejoran tu semblante';
-      this.t_4 = 'Tomar mucha agua ayuda a liberar toxinas';
-      this.t_5 = 'No consumas gasesosas, mejor consume jugos naturales';
-      this.t_6 = 'No te excedas en golosinas mejor come frutas';
-      this.t_7 = 'Recuerda que debes comer las tres comidas principales';
     }
   },
   methods: {
     viewImg1(){
       this.image = image2;
       this.img_name = 'Desayuno';
-      this.detalle = '#desayunoMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 1.mp3'));
     },
     viewImg2(){
       this.image = image3;
       this.img_name = 'Frutas';
-      this.detalle = '#frutasMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 2.mp3'));
     },
     viewImg3(){
       this.image = image5;
       this.img_name = 'Verduras';
-      this.detalle = '#verdurasMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 3.mp3'));
     },
     viewImg4(){
       this.image = image1;
       this.img_name = 'Agua';
-      this.detalle = '#aguaMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 4.mp3'));
     },
     viewImg5(){
       this.image = image1;
       this.img_name = 'lacteos';
-      this.detalle = '#lacteosMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 5.mp3'));
     },
     viewImg6(){
       this.image = image3;
       this.img_name = 'frutas';
-      this.detalle = '#frutasMap';
+      this.audio.file = new Audio(require('../../assets/audio/numero 6.mp3'));
     },
     viewImg7(){
       this.image = image1;
       this.img_name = 'Desayuno';
-      this.detalle = '#desayunoMap';
     },
-    fisrt: function(){
-      alert('work');
+    play(audio) {
+     audio.isPlaying = true;
+     audio.file.play();
     },
-    second: function(){
-      alert('work');
-    }
+    pause(audio) {
+     audio.isPlaying = false;
+     audio.file.pause();
+   }
   }
 }
 </script>

@@ -24,10 +24,28 @@
 </div>
 </template>
 <script>
+//component
 import navbar from '../navbar';
+//elements
 import pizza from '../../assets/icons/pizza.svg'
 import manzana from '../../assets/icons/manzana.svg'
 import papas from '../../assets/icons/papas-fritas.svg'
+import carrot from '../../assets/icons/carrot.svg'
+import emparedado from '../../assets/icons/emparedado.svg'
+import avena from '../../assets/icons/avena.svg'
+import hamburguesa from '../../assets/icons/hamburguesa.svg'
+import fresas from '../../assets/icons/fresas.svg'
+import tocino from '../../assets/icons/tocino.svg'
+import broccoli from '../../assets/icons/broccoli.svg'
+import pollo from '../../assets/icons/pollo.svg'
+import naranja from '../../assets/icons/naranja.svg'
+import jamon from '../../assets/icons/jamon.svg'
+import sandia from '../../assets/icons/sandia.svg'
+import filete from '../../assets/icons/filete.svg'
+import agua from '../../assets/icons/agua.svg'
+import pastelito from '../../assets/icons/pastelito.svg'
+import queso from '../../assets/icons/queso.svg'
+//alerts
 import swal from 'sweetalert2'
 export default {
   name: 'healtly',
@@ -55,6 +73,81 @@ export default {
           name: 'papas-fritas',
           src: papas
         },
+        {
+          id: 4,
+          name: 'carrot',
+          src: carrot
+        },
+        {
+          id: 5,
+          name: 'emparedado',
+          src: emparedado
+        },
+        {
+          id: 6,
+          name: 'avena',
+          src: avena
+        },
+        {
+          id: 7,
+          name: 'hamburguesa',
+          src: hamburguesa
+        },
+        {
+          id: 8,
+          name: 'fresas',
+          src: fresas
+        },
+        {
+          id: 9,
+          name: 'tocino',
+          src: tocino
+        },
+        {
+          id: 10,
+          name: 'broccoli',
+          src: broccoli
+        },
+        {
+          id: 11,
+          name: 'pollo',
+          src: pollo
+        },
+        {
+          id: 12,
+          name: 'naranja',
+          src: naranja
+        },
+        {
+          id: 13,
+          name: 'jamon',
+          src: jamon
+        },
+        {
+          id: 14,
+          name: 'sandia',
+          src: sandia
+        },
+        {
+          id: 15,
+          name: 'filete',
+          src: filete
+        },
+        {
+          id: 16,
+          name: 'agua',
+          src: agua
+        },
+        {
+          id: 17,
+          name: 'pastelito',
+          src: pastelito
+        },
+        {
+          id: 18,
+          name: 'queso',
+          src: queso
+        }
       ],
       box1: {
         id: 'b1',
@@ -118,6 +211,97 @@ export default {
               showConfirmButton: false,
               timer: 1500
             })
+          } else if (this.box1.cad[i] == 6) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 8) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 10) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 12) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 14) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 16) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box1.cad[i] == 18) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
           } else {
             swal({
               position: 'top-end',
@@ -148,6 +332,104 @@ export default {
               timer: 1500
             })
           } else if (this.box2.cad[i] == 3) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 5) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 7) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 9) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 11) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 13) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 15) {
+            //añade el hijo a la piramide
+            event.target.appendChild(this.dragged);
+            //desvanece el item principal
+
+            this.$store.dispatch('incrementAsync');
+
+            swal({
+              position: 'top-end',
+              type: 'success',
+              title: 'Buen trabajo! sigue así',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          } else if (this.box2.cad[i] == 17) {
             //añade el hijo a la piramide
             event.target.appendChild(this.dragged);
             //desvanece el item principal

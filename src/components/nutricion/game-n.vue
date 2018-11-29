@@ -156,7 +156,7 @@ export default {
 }
 
 .ajust-t-2{
-  position: absolute;
+  position: relative;
   margin-top: -190px;
 }
 </style>
