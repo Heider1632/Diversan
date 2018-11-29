@@ -36,20 +36,35 @@
       </div>
       <div class="row">
         <div class="box mx-auto">
-          <h3 align="center">{{ title }}</h3>
-          <p class="lead">{{ body }}</p>
+          <h3 align="center" v-model="title"></h3>
+          <div class="col-md-5 col-lg-5 col-sm-5">
+            <div class="card">
+              <div class="card-body">
+                <p class="lead" v-model="body1"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-5 col-sm-5"></div>
+          <div class="card">
+            <div class="card-body">
+              <p class="lead" v-model="body2"></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 ajust-t">
-      <navbar />
-    </div>
   </div>
+
+  <div class="col-lg-2 col-md-2 col-sm-2 ajust-t">
+    <navbar />
+  </div>
+</div>
 </div>
 </template>
 <script>
-import {store} from '../../store/store'
+import {
+  store
+} from '../../store/store'
 import vod1 from '../../assets/video/nutricionf.mp4'
 import vod2 from '../../assets/video/alimentacionf.mp4'
 import vod3 from '../../assets/video/nutritionf.mp4'
@@ -64,7 +79,8 @@ export default {
     return {
       language: store.getters.getLanguage,
       title: 'alimentacion sana y no sana',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      body1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      body2: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
       title_message: 'Aprendamos',
       N_title: 'Nutricion',
       A_title: 'Alimentacion',
@@ -80,18 +96,9 @@ export default {
       this.video_1 = vod3;
       this.video_2 = vod4;
       this.title = 'healthy and unhealthly';
-      this.body = '';
-    }
-  },
-  update() {
-    if (this.language == 'en') {
-      this.title_message = 'let`s learn';
-      this.N_title = 'Nutrition';
-      this.A_title = 'Feddind';
-      this.video_1 = vod3;
-      this.video_2 = vod4;
-      this.title = 'healthy and unhealthly';
-      this.body = '';
+      this.body1 = 'Eating Healthy food means eating a variety of foods that give you the nutrients you need to maintain your health, feel good, and have energy. These nutrients include protein, carbohydrates, fat, water, vitamins, and minerals.';
+      this.body2 =
+        'Any food that is not regarded as being conducive to maintaining health. Unhealthy foods include fats (especially of animal origin), “fast” foods (which are low in fibre and vitamins), foods high in salt  and tropical oils (e.g.,fried potato crisps/chips), and cream-based (“white”) sauces (which are high in fat).';
     }
   }
 }
