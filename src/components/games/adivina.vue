@@ -349,7 +349,7 @@ export default {
 }
 
 .ajust-m{
-    position: absolute;
+    position: relative;
     margin-top: -30px;
 }
 

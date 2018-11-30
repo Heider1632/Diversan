@@ -7,7 +7,7 @@
   </div>
   <div class="row">
     <div class="col-lg-10 col-md-10 col-sm-10">
-      <div class="columns is-multiline controls">
+      <div class="columns is-multiline ">
         <!-- primer juego -->
         <div class="colum games">
           <div class="card target" style="width: 13rem;" @click="goAdivina()">

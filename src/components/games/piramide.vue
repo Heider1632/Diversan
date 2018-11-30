@@ -3,7 +3,7 @@
         <div class="row bg">
           <!-- juego piramide -->
           <div class="piramid-container col-lg-5 col-md-5 col-sm-5">
-            <div class="piramid">
+            <div class="piramide">
               <div :id="level1.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
               <div :id="level2.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
               <div :id="level3.id" v-on:dragenter="dragenter($event)" v-on:dragleave="dragleave($event)" v-on:dragover="dragover($event)" v-on:drop="dragdrop($event)"></div>
@@ -431,7 +431,7 @@ export default {
 }
 
 .piramid-container{
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 20px;
   /*IMPORTANTE*/
@@ -456,12 +456,10 @@ export default {
   margin: 10px;
 }
 
-.piramid{
+.piramide{
   position: relative;
-  left: 300px;
-
+  margin-left: 600px;
 }
-
 #disable{
   display: none;
 }

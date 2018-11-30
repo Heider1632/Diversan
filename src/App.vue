@@ -102,16 +102,11 @@ export default {
   font-family: 'Indie Flower', cursive;
 }
 
-html {
+html, body{
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }
 
 .fondo{
