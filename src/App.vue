@@ -110,7 +110,7 @@ export default {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 800px;
+  min-height: 750px;
 }
 
 .fondo2{
@@ -119,6 +119,7 @@ export default {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 750px;
 }
 
 .fixed{

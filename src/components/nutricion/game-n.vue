@@ -10,7 +10,7 @@
       <div class="columns is-multiline ">
         <!-- primer juego -->
         <div class="colum games">
-          <div class="card target" style="width: 13rem;" @click="goAdivina()">
+          <div class="card" style="width: 13rem;" @click="goAdivina()">
             <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
             <hr>
             <div class="card-body">
@@ -20,7 +20,7 @@
         </div>
         <!-- segundo juego -->
         <div class="colum games">
-          <div class="card target" style="width: 13rem;" @click="goPiramide()">
+          <div class="card" style="width: 13rem;" @click="goPiramide()">
             <img class="card-img-top topic-game" src="../../assets/icons/piramide-ico.svg" alt="Piramide">
             <hr>
             <div class="card-body">
@@ -40,7 +40,7 @@
         </div>
         <!-- cuarto juego -->
         <div class="colum games">
-          <div class="card target" style="width: 13rem;" @click="goHealtly()">
+          <div class="card" style="width: 13rem;" @click="goHealtly()">
             <img class="card-img-top topic-game" src="../../assets/games/pregunta.png" alt="Adivina">
             <hr>
             <div class="card-body">
@@ -125,10 +125,6 @@ export default {
 
 .topic-game {
   margin: 2px;
-}
-
-.target {
-  margin-left: 100px;
 }
 
 .target:hover {

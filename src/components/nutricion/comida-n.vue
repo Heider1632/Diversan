@@ -45,6 +45,7 @@
 </div>
 </template>
 <script>
+import $ from 'jquery'
 import {store} from '../../store/store'
 import swal from 'sweetalert2'
 import navbar from '../navbar'
@@ -83,7 +84,8 @@ export default {
       text3: 'El tercer grupo incluye las frutas, las verduras y las hortalizas.¡Son alimentos ricos en vitaminas y minerales!',
       text2: 'El segundo grupo incluye alimentos como cereales, pan, arroz, leguminosas y pasta.¡Estos son los que te aportan más vitaminas y carbohidratos!',
       text1: 'El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.',
-      title: 'Escuchar'
+      title: 'Escuchar',
+      audio: undefined
     }
   },
   mounted(){
@@ -106,6 +108,8 @@ export default {
   },
   methods: {
     showInf6() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_6,
@@ -116,19 +120,22 @@ export default {
         imageHeight: 200,
         imageAlt: 'Pizza',
         showConfirmButton: true,
-        confirmButtonText: this.title,
         animation: false,
-      }).then(function() {
-          if(store.getters.getLanguage == 'en'){
-            var aud_6 = audio_12;
-          }else{
-            var aud_6 = audio_6;
-          }
-          var audio = new Audio(aud_6);
-          audio.play();
+      }).then(function(){
+        vm.audio.pause();
       })
+
+      if(this.language == 'en'){
+          this.audio = new Audio(audio_11);
+      }else{
+          this.audio = new Audio(audio_6);
+      }
+      this.audio.play();
+
     },
     showInf5() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_5,
@@ -139,19 +146,21 @@ export default {
         imageHeight: 200,
         imageAlt: 'Filete',
         showConfirmButton: true,
-        confirmButtonText: this.title,
         animation: false,
       }).then(function() {
-        if(store.getters.getLanguage == 'en'){
-          var aud_5 = audio_11;
-        }else{
-          var aud_5 = audio_5;
-        }
-          var audio = new Audio(aud_5);
-          audio.play();
+        vm.audio.pause();
       })
+
+      if(store.getters.getLanguage == 'en'){
+        this.audio = new Audio(audio_11);
+      }else{
+        this.audio = new Audio(audio_5);
+      }
+      this.audio.play();
     },
     showInf4() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_4,
@@ -162,19 +171,21 @@ export default {
         imageHeight: 200,
         imageAlt: 'Leche',
         showConfirmButton: true,
-        confirmButtonText: this.title,
         animation: false,
       }).then(function() {
-        if(store.getters.getLanguage == 'en'){
-          var aud_4 = audio_10;
-        }else{
-          var aud_4 = audio_4;
-        }
-          var audio = new Audio(aud_4);
-          audio.play();
+          vm.audio.pause();
       })
+
+      if(store.getters.getLanguage == 'en'){
+        this.audio = new Audio(audio_10);
+      }else{
+        this.audio = new Audio(audio_4);
+      }
+      this.audio.play();
     },
     showInf3() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_3,
@@ -185,19 +196,21 @@ export default {
         imageHeight: 200,
         imageAlt: 'Frutas',
         showConfirmButton: true,
-        confirmButtonText: this.title,
         animation: false,
       }).then(function() {
-        if(store.getters.getLanguage == 'en'){
-          var aud_3 = audio_9;
-        }else{
-          var aud_3 = audio_3;
-        }
-          var audio = new Audio(aud_3);
-          audio.play();
+        vm.audio.pause();
       })
+
+      if(this.language == 'en'){
+          this.audio = new Audio(audio_9);
+      }else{
+          this.audio = new Audio(audio_3);
+      }
+      this.audio.play();
     },
     showInf2() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_2,
@@ -211,16 +224,19 @@ export default {
         confirmButtonText: this.title,
         animation: false,
       }).then(function() {
-        if(store.getters.getLanguage == 'en'){
-          var aud_2 = audio_8;
-        }else{
-          var aud_2 = audio_2;
-        }
-          var audio = new Audio(aud_2);
-          audio.play();
+          vm.audio.pause();
       })
+
+      if(this.language == 'en'){
+          this.audio = new Audio(audio_8);
+      }else{
+          this.audio = new Audio(audio_2);
+      }
+      this.audio.play();
     },
     showInf1() {
+      var vm = this;
+
       swal({
         position: 'top-start',
         title: this.g_1,
@@ -234,29 +250,25 @@ export default {
         confirmButtonText: this.title,
         animation: false,
       }).then(function() {
-        if(store.getters.getLanguage == 'en'){
-          var aud_1 = audio_7;
-        }else{
-          var aud_1 = audio_1;
-        }
-          var audio = new Audio(aud_1);
-          audio.play();
+        vm.audio.pause();
       })
+
+      if(this.language == 'en'){
+          this.audio = new Audio(audio_7);
+      }else{
+          this.audio = new Audio(audio_1);
+      }
+      this.audio.play();
     },
     show() {
       this.$refs.myModalPiramide.show();
     },
     hideModal() {
       this.$refs.myModalPiramide.hide()
-    },
-    playAudio1(){
-      console.log('cool!');
-    },
-    playAudio2(){
-      console.log('cool!');
-    },
+    }
   }
 }
+
 </script>
 <style>
 .main {
