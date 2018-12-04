@@ -55,7 +55,7 @@
             </div>
             <template v-for="audio in audios">
               <br>
-              <button class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)">
+              <button class="btn btn-primary btn-sm mx-auto ajust-button" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)">
               {{ audio.isPlaying ? 'Pause' : 'Play' }} {{ audio.name }}
               </button>
             </template>
@@ -99,13 +99,13 @@ export default {
         {
           id: 'alimentacion sana',
           name: 'alimentacion sana',
-          file: new Audio(require('../../assets/audio/Healthy.mp3')),
+          file: new Audio(require('../../assets/audio/comida/COMIDA SANA.mp3')),
           isPlaying: false
         },
         {
           id: 'alimentacion no sana',
           name: 'alimentacion no sana',
-          file: new Audio(require('../../assets/audio/Unhealthy.mp3')),
+          file: new Audio(require('../../assets/audio/comida/COMIDA NO SANA.mp3')),
           isPlaying: false
         }
       ]
@@ -121,6 +121,8 @@ export default {
       this.title = 'healthy and unhealthly';
       this.body1 = 'Eating Healthy food means eating a variety of foods that give you the nutrients you need to maintain your health, feel good, and have energy. These nutrients include protein, carbohydrates, fat, water, vitamins, and minerals.';
       this.body2 = 'Any food that is not regarded as being conducive to maintaining health. Unhealthy foods include fats (especially of animal origin), “fast” foods (which are low in fibre and vitamins), foods high in salt  and tropical oils (e.g.,fried potato crisps/chips), and cream-based (“white”) sauces (which are high in fat).';
+      this.audios[0].file = new Audio(require('../../assets/audio/Healthy.mp3'));
+      this.audios[1].file = new Audio(require('../../assets/audio/Unhealthy.mp3'));
     }
   },
   methods: {
@@ -146,5 +148,9 @@ export default {
   width: 83.3333%;
   box-shadow: 1px solid #ccc;
   margin-top: 50px;
+}
+
+.ajust-button{
+  margin-left: 30px;
 }
 </style>

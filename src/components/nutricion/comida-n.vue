@@ -52,7 +52,7 @@ import navbar from '../navbar'
 import audio_1 from '../../assets/audio/primer_grupo.mp3'
 import audio_2 from '../../assets/audio/segundo_grupo.mp3'
 import audio_3 from '../../assets/audio/tercer_grupo.mp3'
-import audio_4 from '../../assets/audio/grupo4.mp3'
+import audio_4 from '../../assets/audio/cuarto_grupo.mp3'
 import audio_5 from '../../assets/audio/quinto_grupo.mp3'
 import audio_6 from '../../assets/audio/sexto_grupo.mp3'
 
