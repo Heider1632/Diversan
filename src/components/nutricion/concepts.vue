@@ -125,12 +125,12 @@ export default {
   },
   methods: {
     play(audio) {
-     audio1.isPlaying = true;
-     audio1.file.play();
+     audio.isPlaying = true;
+     audio.file.play();
     },
     pause(audio) {
-     audio1.isPlaying = false;
-     audio1.file.pause();
+     audio.isPlaying = false;
+     audio.file.pause();
    }
   }
 }

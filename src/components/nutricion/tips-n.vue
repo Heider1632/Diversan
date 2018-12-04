@@ -140,6 +140,20 @@ import image3 from '../../assets/tips/frutas.svg'
 import image4 from '../../assets/tips/lacteos.svg'
 import image5 from '../../assets/tips/verduras.svg'
 
+import a_1 from '../../assets/audio/numero 1.mp3'
+import a_2 from '../../assets/audio/numero 2.mp3'
+import a_3 from '../../assets/audio/numero 3.mp3'
+import a_4 from '../../assets/audio/numero 4.mp3'
+import a_5 from '../../assets/audio/numero 5.mp3'
+import a_6 from '../../assets/audio/numero 6.mp3'
+
+import a_8 from '../../assets/audio/tips-ingles/tip1.mp3'
+import a_9 from '../../assets/audio/tips-ingles/tip2.mp3'
+import a_10 from '../../assets/audio/tips-ingles/tip3.mp3'
+import a_11 from '../../assets/audio/tips-ingles/tip4.mp3'
+import a_12 from '../../assets/audio/tips-ingles/tip5.mp3'
+import a_13 from '../../assets/audio/tips-ingles/tip6.mp3'
+import a_14 from '../../assets/audio/tips-ingles/tip7.mp3'
 
 import navbar from '../navbar'
 export default {
@@ -166,14 +180,20 @@ export default {
       ],
       image: image2,
       img_name: null,
-      audio_1: '',
+      sound_1: a_1,
+      sound_2: a_2,
+      sound_3: a_3,
+      sound_4: a_4,
+      sound_5: a_5,
+      sound_6: a_6,
+      sound_7: a_14,
       audio:
       {
         id: 'music',
         name: 'consejo',
-        file: new Audio(require('../../assets/audio/numero 1.mp3')),
+        file: new Audio(this.sound_1),
         isPlaying: false
-      }
+      },
     }
   },
   mounted(){
@@ -187,55 +207,50 @@ export default {
       this.t_5 = 'Do not consume soft drinks, better consume natural juices';
       this.t_6 = 'Do not exceed in consuming goodies, better eat fruits';
       this.t_7 = 'Remember that you must eat the three main meals';
-    }
-  },
-  update(){
-    if(this.language == 'en'){
-      this.dieta_title = 'WHAT IS A BALANCED DIET?';
-      this.dieta_body = 'Diet is the set of aliments that you consume on a daily basis. This allows you to obtain the nutrients necessary for your appropriate development. For a diet to be healthy it must include a variety of aliments in the right amounts. We present some tips to make your diet a healthy diet for your good development.';
-      this.t_1 = 'Breakfast is the most important meal of the day because it gives you a lot of energy! Never forget to have breakfast!';
-      this.t_2 = 'Fruits give you many vitamins and nutrients that will make you grow big and strong';
-      this.t_3 = 'The vegetables fight against many diseases and improve your look';
-      this.t_4 = 'Drinking a  lot of water helps to release toxins';
-      this.t_5 = 'Do not consume soft drinks, better consume natural juices';
-      this.t_6 = 'Do not exceed in consuming goodies, better eat fruits';
-      this.t_7 = 'Remember that you must eat the three main meals';
+      this.sound_1 = a_8;
+      this.sound_2 = a_9;
+      this.sound_3 = a_10;
+      this.sound_4 = a_11;
+      this.sound_5 = a_12;
+      this.sound_6 = a_13;
+      this.sound_7 = a_14;
     }
   },
   methods: {
     viewImg1(){
       this.image = image2;
       this.img_name = 'Desayuno';
-      this.audio.file = new Audio(require('../../assets/audio/numero 1.mp3'));
+      this.audio.file = new Audio(this.sound_1);
     },
     viewImg2(){
       this.image = image3;
       this.img_name = 'Frutas';
-      this.audio.file = new Audio(require('../../assets/audio/numero 2.mp3'));
+      this.audio.file = new Audio(this.sound_2);
     },
     viewImg3(){
       this.image = image5;
       this.img_name = 'Verduras';
-      this.audio.file = new Audio(require('../../assets/audio/numero 3.mp3'));
+      this.audio.file = new Audio(this.sound_3);
     },
     viewImg4(){
       this.image = image1;
       this.img_name = 'Agua';
-      this.audio.file = new Audio(require('../../assets/audio/numero 4.mp3'));
+      this.audio.file = new Audio(this.sound_4);
     },
     viewImg5(){
       this.image = image1;
       this.img_name = 'lacteos';
-      this.audio.file = new Audio(require('../../assets/audio/numero 5.mp3'));
+      this.audio.file = new Audio(this.sound_5);
     },
     viewImg6(){
       this.image = image3;
       this.img_name = 'frutas';
-      this.audio.file = new Audio(require('../../assets/audio/numero 6.mp3'));
+      this.audio.file = new Audio(this.sound_6);
     },
     viewImg7(){
       this.image = image1;
       this.img_name = 'Desayuno';
+      this.audio.file = new Audio(this.sound_7);
     },
     play(audio) {
      audio.isPlaying = true;

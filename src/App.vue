@@ -97,34 +97,28 @@ export default {
 
 <style>
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Merriweather', serif;
   font-family: 'Indie Flower', cursive;
 }
 
-html, body{
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-}
-
 .fondo{
-  width: 100%;
-  height: 100vh;
-  background: url(../src/assets/fondo.jpg);
-  background-position: center;
+  background: url(../src/assets/fondo.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
+  min-height: 800px;
 }
 
 .fondo2{
-  width: 100%;
-  height: 100vh;
-  background: url(../src/assets/fondo2.jpg);
-  background-position: center;
+  background: url(../src/assets/fondo2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .fixed{

@@ -48,6 +48,21 @@
 import {store} from '../../store/store'
 import swal from 'sweetalert2'
 import navbar from '../navbar'
+
+import audio_1 from '../../assets/audio/primer_grupo.mp3'
+import audio_2 from '../../assets/audio/segundo_grupo.mp3'
+import audio_3 from '../../assets/audio/tercer_grupo.mp3'
+import audio_4 from '../../assets/audio/grupo4.mp3'
+import audio_5 from '../../assets/audio/quinto_grupo.mp3'
+import audio_6 from '../../assets/audio/sexto_grupo.mp3'
+
+import audio_7 from '../../assets/audio/gp_ingles/grupo1.mp3'
+import audio_8 from '../../assets/audio/gp_ingles/grupo2.mp3'
+import audio_9 from '../../assets/audio/gp_ingles/grupo3.mp3'
+import audio_10 from '../../assets/audio/gp_ingles/grupo4.mp3'
+import audio_11 from '../../assets/audio/gp_ingles/grupo5.mp3'
+import audio_12 from '../../assets/audio/gp_ingles/grupo6.mp3'
+
 export default {
   components: {
     navbar
@@ -67,8 +82,8 @@ export default {
       text4: 'El cuarto grupo son los lacteos, que te proveen de calcio que te ayudan a mantener huesos sanos y fuertes.',
       text3: 'El tercer grupo incluye las frutas, las verduras y las hortalizas.¡Son alimentos ricos en vitaminas y minerales!',
       text2: 'El segundo grupo incluye alimentos como cereales, pan, arroz, leguminosas y pasta.¡Estos son los que te aportan más vitaminas y carbohidratos!',
-      text1: 'El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.'
-
+      text1: 'El primer grupo, la base de la pirámide, incluye el agua, que aunque no es un alimento, consumirla es fundamental para tu vida.',
+      title: 'Escuchar'
     }
   },
   mounted(){
@@ -86,23 +101,7 @@ export default {
         this.text4 = 'is dairy products, which provide you with calcium that helps you to maintain healthy and strong bones.';
         this.text5 = 'includes meats, fish and eggs. These are very rich in proteins, which are like  the blocks that sustain your body. They are fundamental for your optimal growth.';
         this.text6 = 'includes fats, oils and sweets. These ones provide your body with a lot of energy and few nutrients, therefore you must consume them in less quantities!';
-    }
-  },
-  update(){
-    if(this.language == 'en'){
-      this.g_6 = 'sixth group';
-      this.g_5 = 'fifth group';
-      this.g_4 = 'fourth group';
-      this.g_3 = 'third group';
-      this.g_2 = 'second group ';
-      this.g_1 = 'first group';
-      this.concept = 'For an appropriate diet, it is important that you include a variety set of aliments in the right amounts. The food pyramid will help you easily to identify which food is needed and how much you should consume in a balanced diet. For this, the food pyramid is divided into several groups.';
-      this.text1 = 'the base of the pyramid, includes water, that although it is not a food, its consumption is essential for life.';
-      this.text2 = 'includes foods such as cereals, bread, rice, legumes and pasta. These are the ones that give you more vitamins and carbohydrates!';
-      this.text3 = 'includes fruits, and vegetables. They are rich in vitamins and minerals!';
-      this.text4 = 'is dairy products, which provide you with calcium that helps you to maintain healthy and strong bones.';
-      this.text5 = 'includes meats, fish and eggs. These are very rich in proteins, which are like  the blocks that sustain your body. They are fundamental for your optimal growth.';
-      this.text6 = 'includes fats, oils and sweets. These ones provide your body with a lot of energy and few nutrients, therefore you must consume them in less quantities!';
+        this.title = 'Listen';
     }
   },
   methods: {
@@ -116,8 +115,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Pizza',
-        showConfirmButton: false,
-        animation: false
+        showConfirmButton: true,
+        confirmButtonText: this.title,
+        animation: false,
+      }).then(function() {
+          if(store.getters.getLanguage == 'en'){
+            var aud_6 = audio_12;
+          }else{
+            var aud_6 = audio_6;
+          }
+          var audio = new Audio(aud_6);
+          audio.play();
       })
     },
     showInf5() {
@@ -130,8 +138,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Filete',
-        showConfirmButton: false,
+        showConfirmButton: true,
+        confirmButtonText: this.title,
         animation: false,
+      }).then(function() {
+        if(store.getters.getLanguage == 'en'){
+          var aud_5 = audio_11;
+        }else{
+          var aud_5 = audio_5;
+        }
+          var audio = new Audio(aud_5);
+          audio.play();
       })
     },
     showInf4() {
@@ -144,8 +161,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Leche',
-        showConfirmButton: false,
+        showConfirmButton: true,
+        confirmButtonText: this.title,
         animation: false,
+      }).then(function() {
+        if(store.getters.getLanguage == 'en'){
+          var aud_4 = audio_10;
+        }else{
+          var aud_4 = audio_4;
+        }
+          var audio = new Audio(aud_4);
+          audio.play();
       })
     },
     showInf3() {
@@ -158,8 +184,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Frutas',
-        showConfirmButton: false,
+        showConfirmButton: true,
+        confirmButtonText: this.title,
         animation: false,
+      }).then(function() {
+        if(store.getters.getLanguage == 'en'){
+          var aud_3 = audio_9;
+        }else{
+          var aud_3 = audio_3;
+        }
+          var audio = new Audio(aud_3);
+          audio.play();
       })
     },
     showInf2() {
@@ -172,8 +207,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Pan',
-        showConfirmButton: false,
+        showConfirmButton: true,
+        confirmButtonText: this.title,
         animation: false,
+      }).then(function() {
+        if(store.getters.getLanguage == 'en'){
+          var aud_2 = audio_8;
+        }else{
+          var aud_2 = audio_2;
+        }
+          var audio = new Audio(aud_2);
+          audio.play();
       })
     },
     showInf1() {
@@ -186,8 +230,17 @@ export default {
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: 'Agua',
-        showConfirmButton: false,
+        showConfirmButton: true,
+        confirmButtonText: this.title,
         animation: false,
+      }).then(function() {
+        if(store.getters.getLanguage == 'en'){
+          var aud_1 = audio_7;
+        }else{
+          var aud_1 = audio_1;
+        }
+          var audio = new Audio(aud_1);
+          audio.play();
       })
     },
     show() {
@@ -195,7 +248,13 @@ export default {
     },
     hideModal() {
       this.$refs.myModalPiramide.hide()
-    }
+    },
+    playAudio1(){
+      console.log('cool!');
+    },
+    playAudio2(){
+      console.log('cool!');
+    },
   }
 }
 </script>
