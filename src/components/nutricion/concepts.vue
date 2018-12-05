@@ -87,7 +87,7 @@ export default {
   data() {
     return {
       language: store.getters.getLanguage,
-      title: 'alimentacion sana y no sana',
+      title: 'Alimentacion sana y no sana',
       body1: 'Comer alimentos saludables significa comer una variedad de alimentos que le brindan a nuestro organismo los nutrientes que necesita para mantener la salud, sentirse bien y tener energía. Estos nutrientes incluyen proteínas, carbohidratos, grasas, agua, vitaminas y minerales.',
       body2: 'Cualquier alimento que no se considere conducente a mantener la salud es considerado como alimento no sano. Los alimentos no saludables incluyen grasas (especialmente de origen animal), alimentos "rápidos" (que son bajos en fibra y vitaminas), alimentos con alto contenido de sal y aceites tropicales (por ejemplo, papas fritas / comidas rápidas) etc.',
       title_message: 'Aprendamos',
@@ -118,9 +118,9 @@ export default {
       this.A_title = 'Feddind';
       this.video_1 = vod3;
       this.video_2 = vod4;
-      this.title = 'healthy and unhealthly';
+      this.title = 'Healthy and Unhealthly';
       this.body1 = 'Eating Healthy food means eating a variety of foods that give you the nutrients you need to maintain your health, feel good, and have energy. These nutrients include protein, carbohydrates, fat, water, vitamins, and minerals.';
-      this.body2 = 'Any food that is not regarded as being conducive to maintaining health. Unhealthy foods include fats (especially of animal origin), “fast” foods (which are low in fibre and vitamins), foods high in salt  and tropical oils (e.g.,fried potato crisps/chips), and cream-based (“white”) sauces (which are high in fat).';
+      this.body2 = 'Any food that is not regarded as being conducive to maintaining health. Unhealthy foods include fats (especially of animal origin), “fast” foods (which are low in fibre and vitamins), foods high in salt and tropical oils (e.g.,fried potato crisps/chips), and cream-based (“white”) sauces (which are high in fat).';
       this.audios[0].file = new Audio(require('../../assets/audio/Healthy.mp3'));
       this.audios[1].file = new Audio(require('../../assets/audio/Unhealthy.mp3'));
     }
