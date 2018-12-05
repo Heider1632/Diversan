@@ -126,7 +126,7 @@ export default {
       })
 
       if(this.language == 'en'){
-          this.audio = new Audio(audio_11);
+          this.audio = new Audio(audio_12);
       }else{
           this.audio = new Audio(audio_6);
       }

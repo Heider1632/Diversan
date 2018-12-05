@@ -4,7 +4,7 @@
     <div class="col-lg-10 col-md-10 col-sm-12">
       <div class="row bg">
         <div class="titles">
-          <h1>Alimentos sanos || Alimentos no sanos</h1>
+          <h1>{{ title_hu }}</h1>
         </div>
       </div>
       <div class="row">
@@ -24,6 +24,8 @@
 </div>
 </template>
 <script>
+//$store
+import {store} from '../../store/store'
 //component
 import navbar from '../navbar';
 //elements
@@ -54,9 +56,11 @@ export default {
   },
   data() {
     return {
+      language: store.getters.getLanguage,
       draggingItem: undefined,
       dragged: undefined,
       classOn: 'fill',
+      title_hu: 'Alimentos sanos || Alimentos no sanos',
       items: [
         {
           id: 1,
@@ -157,6 +161,11 @@ export default {
         id: 'b2',
         cad: []
       },
+    }
+  },
+  mounted(){
+    if(this.language == 'en'){
+      this.title_hu = 'Healthy and Unhealthly';
     }
   },
   methods: {
